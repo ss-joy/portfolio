@@ -1,11 +1,14 @@
 import React from "react";
 import Pills from "./Pills";
+import { Element } from "react-scroll";
 
 const Skills = () => {
   return (
-    <div>
-      <Pills />
-    </div>
+    <Element name="Skills">
+      <div className="w-full">
+        <Pills />
+      </div>
+    </Element>
   );
 };
 

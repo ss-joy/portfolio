@@ -39,7 +39,7 @@ const skills: Skill[] = [
 ];
 const Pills = () => {
   return (
-    <section className="flex gap-2 flex-wrap justify-center max-w-[1080px] mx-auto">
+    <section className="flex gap-2 flex-wrap justify-center w-full mx-auto">
       {skills.map((skill, index) => (
         <motion.p
           key={index}

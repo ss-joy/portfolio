@@ -15,7 +15,7 @@ const Skills = () => {
         <span className="text-white block text-5xl opacity-70 hover:opacity-85 rotate absolute bottom-52 left-20 rotate-45">
           {"{ }"}
         </span>
-        <span className="text-white text-5xl opacity-70 scale-[3] block absolute top-60 right-[200px] -rotate-45">
+        <span className="text-white tilt text-5xl opacity-70 block absolute top-60 right-[200px]">
           {"<% %>"}
         </span>
       </div>

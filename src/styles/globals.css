@@ -68,6 +68,24 @@
       transform: rotate(360deg);
     }
   }
+  @keyframes tilt {
+    0% {
+      transform: rotate(-45deg) scale(3);
+    }
+
+    25% {
+      transform: rotate(-15deg) scale(3);
+    }
+    50% {
+      transform: rotate(0deg) scale(3);
+    }
+    75% {
+      transform: rotate(15deg scale(3));
+    }
+    100% {
+      transform: rotate(-45deg) scale(3);
+    }
+  }
 }
 
 @layer components {
@@ -77,6 +95,12 @@
   .rotate {
     animation-name: rotate;
     animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .tilt {
+    animation-name: tilt;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }

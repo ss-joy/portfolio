@@ -22,6 +22,8 @@ const skills: Skill[] = [
   { name: "Express.js", iconUrl: "https://cdn.simpleicons.org/express/000000" },
   { name: "NestJS", iconUrl: "https://cdn.simpleicons.org/nestjs/E0234E" },
   { name: "React.js", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
+  { name: "Pug.js", iconUrl: "https://cdn.simpleicons.org/pug/61DAFB" },
+  { name: "Pug.js", iconUrl: "https://cdn.simpleicons.org/ejs/61DAFB" },
   { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs/000000" },
   { name: "Redux", iconUrl: "https://cdn.simpleicons.org/redux/764ABC" },
   { name: "Vue.js", iconUrl: "https://cdn.simpleicons.org/vuedotjs/4FC08D" },
@@ -33,6 +35,8 @@ const skills: Skill[] = [
   { name: "MySQL", iconUrl: "https://cdn.simpleicons.org/mysql/4479A1" },
   { name: "Linux", iconUrl: "https://cdn.simpleicons.org/linux/FCC624" },
   { name: "Git", iconUrl: "https://cdn.simpleicons.org/git/F05032" },
+  { name: "GitHub", iconUrl: "https://cdn.simpleicons.org/github/F05032" },
+
   { name: "Docker", iconUrl: "https://cdn.simpleicons.org/docker/2496ED" },
   { name: "Python", iconUrl: "https://cdn.simpleicons.org/python/3776AB" },
   { name: "Craft CMS", iconUrl: "https://cdn.simpleicons.org/craftcms/EF4A42" },

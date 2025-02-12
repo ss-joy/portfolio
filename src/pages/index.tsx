@@ -2,6 +2,7 @@ import Intro from "@/components/About";
 import Contact from "@/components/Contact";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import FooterGradient from "@/components/FooterGradient";
 import NavBar from "@/components/NavBar";
 import Projects from "@/components/Projects";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -15,10 +16,11 @@ export default function Home() {
         <Intro />
         <Experience />
         <Skills />
-        <Education />
         <Projects />
+        <Education />
         <Contact />
         <ScrollToTop />
+        <FooterGradient />
       </div>
     </div>
   );

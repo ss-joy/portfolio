@@ -9,15 +9,17 @@ import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
-    <div className="max-w-[1080px] mx-auto relative">
-      <NavBar />
-      <Intro />
-      <Experience />
-      <Skills />
-      <Education />
-      <Projects />
-      <Contact />
-      <ScrollToTop />
+    <div className="bg-gradient-to-b from-white via-sky-300 to-sky-600">
+      <div className="max-w-[1080px] mx-auto relative">
+        <NavBar />
+        <Intro />
+        <Experience />
+        <Skills />
+        <Education />
+        <Projects />
+        <Contact />
+        <ScrollToTop />
+      </div>
     </div>
   );
 }

@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply m-0 p-0;
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -56,10 +59,25 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 @layer components {
   .nav-item-active {
     @apply stroke-sky-800;
+  }
+  .rotate {
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 }

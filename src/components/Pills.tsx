@@ -43,7 +43,7 @@ const Pills = () => {
       {skills.map((skill, index) => (
         <motion.p
           key={index}
-          className="flex gap-1 items-center text-[#78909c] rounded-lg p-2 hover:cursor-pointer shadow-sm shadow-slate-300 hover:ring-2 hover:ring-sky-600 transition-all"
+          className="relative z-10 flex gap-1 bg-white items-center text-[#78909c] rounded-lg p-2 hover:cursor-pointer shadow-sm shadow-slate-300 hover:ring-2 hover:ring-sky-600 transition-all"
           initial={{
             opacity: 0.5,
           }}

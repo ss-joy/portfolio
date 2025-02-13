@@ -12,13 +12,13 @@ const Skills = () => {
           <DraftingCompass className="text-sky-600 absolute size-16 -top-12 left-[-64px] -rotate-45 border-2 border-sky-600 rounded-full p-2 animate-pulse" />
         </h2>
         <Pills />
-        <span className="text-white block text-5xl opacity-70 hover:opacity-85 rotate absolute bottom-52 left-20 rotate-45">
+        <span className="text-white block text-5xl opacity-70 hover:opacity-85 animate-rotate absolute bottom-52 left-20 rotate-45">
           {"{ }"}
         </span>
-        <span className="text-white block text-5xl opacity-70 hover:opacity-85 absolute bottom-52 right-20 tilt">
+        <span className="text-white block text-5xl opacity-70 hover:opacity-85 absolute bottom-52 right-20 animate-tilt">
           {"()=> {  }"}
         </span>
-        <span className="text-white tilt text-5xl opacity-70 block absolute top-60 right-[200px]">
+        <span className="text-white animate-tilt text-5xl opacity-70 block absolute top-60 right-[200px]">
           {"<% %>"}
         </span>
       </div>

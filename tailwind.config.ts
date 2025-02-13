@@ -59,6 +59,70 @@ export default {
       textColor: {
         primary: "var(--color-primary-blue)",
       },
+      keyframes: {
+        rotate: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+        tilt: {
+          "0%": {
+            transform: "rotate(-45deg) scale(3)",
+          },
+          "25%": {
+            transform: "rotate(-15deg) scale(3)",
+          },
+          "50%": {
+            transform: "rotate(0deg) scale(3)",
+          },
+          "75%": {
+            transform: "rotate(15deg) scale(3)",
+          },
+          "100%": {
+            transform: "rotate(-45deg) scale(3)",
+          },
+        },
+        "move-random": {
+          "0%": {
+            transform: "translate(0, 0)",
+          },
+          "20%": {
+            transform: "translate(-50px, 40px)",
+          },
+          "30%": {
+            transform: "translate(-160px, -30px)",
+          },
+          "40%": {
+            transform: "translate(-40px, 20px)",
+          },
+          "50%": {
+            transform: "translate(-50px, -50px)",
+          },
+          "60%": {
+            transform: "translate(-60px, 30px)",
+          },
+          "70%": {
+            transform: "translate(-40px, -60px)",
+          },
+          "80%": {
+            transform: "translate(-30px, 50px)",
+          },
+          "90%": {
+            transform: "translate(20px, -40px)",
+          },
+          "100%": {
+            transform: "translate(0, 0)",
+          },
+        },
+      },
+      animation: {
+        rotate: "rotate 10s linear infinite",
+        tilt: "tilt 30s linear infinite",
+        "move-random": "move-random 30s infinite linear",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

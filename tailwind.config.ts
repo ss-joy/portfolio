@@ -85,12 +85,29 @@ export default {
             transform: "rotate(-45deg) scale(3)",
           },
         },
+        "tilt-small": {
+          "0%": {
+            transform: "rotate(-45deg)",
+          },
+          "25%": {
+            transform: "rotate(-15deg)",
+          },
+          "50%": {
+            transform: "rotate(0deg)",
+          },
+          "75%": {
+            transform: "rotate(15deg)",
+          },
+          "100%": {
+            transform: "rotate(-45deg)",
+          },
+        },
         "move-random": {
           "0%": {
             transform: "translate(0, 0)",
           },
           "20%": {
-            transform: "translate(-50px, 40px)",
+            transform: "translate(-50px, 80px)",
           },
           "30%": {
             transform: "translate(-160px, -30px)",
@@ -121,6 +138,7 @@ export default {
       animation: {
         rotate: "rotate 10s linear infinite",
         tilt: "tilt 30s linear infinite",
+        "tilt-small": "tilt-small 20s linear infinite",
         "move-random": "move-random 30s infinite linear",
       },
     },

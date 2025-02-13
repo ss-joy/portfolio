@@ -5,6 +5,7 @@ import React from "react";
 import { Element } from "react-scroll";
 import { motion } from "motion/react";
 import BlurBall from "./BlurBall";
+
 type ContactInfo = {
   iconUrl: string;
   idLink: string;

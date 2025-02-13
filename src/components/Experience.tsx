@@ -9,7 +9,7 @@ import ExperienceCalender from "./experience/ExperienceCalender";
 const Experience = () => {
   return (
     <Element name="Experience">
-      <section className="w-full min-h-screen pt-12 relative">
+      <section className="w-full min-h-screen pt-12">
         <h2 className="text-sky-600 text-5xl font-bold mt-[64px] pb-6 relative">
           Experience
           <TimerIcon className="absolute size-16 -top-12 left-[-64px] -rotate-45 border-2 border-sky-600 rounded-full p-2 animate-pulse" />

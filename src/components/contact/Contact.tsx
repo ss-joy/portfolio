@@ -5,6 +5,7 @@ import React from "react";
 import { Element } from "react-scroll";
 import { motion } from "motion/react";
 import BlurBall from "./BlurBall";
+import FooterGradient from "./FooterGradient";
 
 type ContactInfo = {
   iconUrl: string;
@@ -109,6 +110,7 @@ const Contact = () => {
           })}
         </div>
         <BlurBall />
+        <FooterGradient />
       </section>
     </Element>
   );

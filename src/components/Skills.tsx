@@ -6,7 +6,7 @@ import { DraftingCompass } from "lucide-react";
 const Skills = () => {
   return (
     <Element name="Skills">
-      <div className="w-full h-screen pt-12 relative">
+      <div className="w-full h-screen pt-12">
         <h2 className="text-sky-600 text-5xl font-bold mt-[64px] pb-6 relative">
           Skills
           <DraftingCompass className="text-sky-600 absolute size-16 -top-12 left-[-64px] -rotate-45 border-2 border-sky-600 rounded-full p-2 animate-pulse" />

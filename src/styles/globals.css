@@ -6,24 +6,12 @@
   html {
     @apply m-0 p-0;
   }
-
-  @keyframes idx {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 }
 
 @layer components {
   .gradient-border-background {
-    background: conic-gradient(white 0deg, #0284c7 0deg, transparent 80deg);
-  }
-  .roo {
-    animation: idx 3s linear infinite;
-    transform-origin: center;
+    /* background: conic-gradient(white 0deg, #0284c7 0deg, transparent 80deg); */
+    background: conic-gradient(transparent 0deg, #0284c7 0deg, white 80deg);
   }
 
   .footer-gradient {

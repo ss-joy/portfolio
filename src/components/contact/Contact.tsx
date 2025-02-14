@@ -44,7 +44,7 @@ const Contact = () => {
           <Satellite className="absolute size-16 -top-12 left-[-64px] border-2 border-white rounded-full p-2 animate-pulse" />
         </h2>
 
-        <div className="grid grid-cols-2 grid-rows-2 items-center place-items-center h-1/2 w-1/2 mx-auto">
+        <div className="grid grid-cols-2 grid-rows-2 items-center place-items-center h-1/2 w-1/2 mx-auto relative z-20">
           {contactInfos.map((cinfo, index) => {
             if (cinfo.type === "link") {
               return (

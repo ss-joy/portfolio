@@ -9,14 +9,6 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        rotate: {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
-          },
-        },
         tilt: {
           "0%": {
             transform: "rotate(-45deg) scale(3)",
@@ -85,10 +77,10 @@ export default {
         },
       },
       animation: {
-        rotate: "rotate 10s linear infinite",
         tilt: "tilt 30s linear infinite",
         "tilt-small": "tilt-small 20s linear infinite",
         "move-random": "move-random 30s infinite linear",
+        "spin-slow": "spin 7s infinite linear",
       },
     },
   },

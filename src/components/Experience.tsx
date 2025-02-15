@@ -5,6 +5,7 @@ import airly from "@/../public/experience/airly.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import ExperienceCalender from "./experience/ExperienceCalender";
+import CardWithAnimatedBorder from "./common/CardWithAnimatedBorder";
 
 const Experience = () => {
   return (
@@ -35,52 +36,30 @@ const Experience = () => {
 
         <ExperienceCalender years={1} />
 
-        {/* card  */}
-        {/* this elevates the card to an upper context than the bg gradient color*/}
-        <div className="relative z-10 mt-8 rounded-lg p-[2px] overflow-hidden">
-          <div
-            className="relative w-full h-full p-7 flex items-start gap-4 bg-sky-100 rounded-lg after:content-[''] after:h-[600%] after:w-[200%] after:absolute after:rounded-lg after:gradient-border-background
-           after:animate-spin-slow after:animate-reverse after:-top-[250%] after:-left-1/2 after:z-[-1]"
-          >
-            <Image
-              src={airly}
-              width={100}
-              height={100}
-              alt="company logo"
-              className="min-w-[200px]"
-            />
-
-            {/* card right part  */}
-            <div className="px-2 flex flex-col gap-2">
-              <Link
-                href={"https://airlystudio.com/"}
-                target="_blank"
-                className="text-3xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent w-fit"
-              >
-                Airly Studio
-              </Link>
-              <h2 className="text-2xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent">
-                Full Stack Softwate Engineer (2024 - Present)
-              </h2>
-              <p className="text-sky-800">
-                Developed and maintained web applications tailored to client
-                requirements using modern JavaScript frameworks and
-                technologies. Ensured responsiveness and cross-browser
-                compatibility. Worked extensively with{" "}
-                <strong>MERN stack</strong>, <strong>Next.js</strong>,{" "}
-                <strong>ReduxJs</strong>, <strong>VueJs</strong> to build while
-                collaborating with team members. Wrote maintainable code for
-                backend, developed <strong>REST API endpoints</strong> and
-                handled <strong>SQL</strong> database. With the help of some
-                figma designs, had the opportunity to design many eye catching
-                webpages with tools such as <strong>tailwindcss</strong>,
-                <strong> antd Library</strong> and manage entire{" "}
-                <strong>state management flow</strong> of many data-heavy sites
-                with <strong>Redux</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
+        <CardWithAnimatedBorder
+          imageLink={airly}
+          companyOrInstitutionLink="https://airlystudio.com/"
+          description={
+            <p className="text-sky-800">
+              Developed and maintained web applications tailored to client
+              requirements using modern JavaScript frameworks and technologies.
+              Ensured responsiveness and cross-browser compatibility. Worked
+              extensively with <strong>MERN stack</strong>,{" "}
+              <strong>Next.js</strong>, <strong>ReduxJs</strong>,{" "}
+              <strong>VueJs</strong> to build while collaborating with team
+              members. Wrote maintainable code for backend, developed{" "}
+              <strong>REST API endpoints</strong> and handled{" "}
+              <strong>SQL</strong> database. With the help of some figma
+              designs, had the opportunity to design many eye catching webpages
+              with tools such as <strong>tailwindcss</strong>,
+              <strong> antd Library</strong> and manage entire{" "}
+              <strong>state management flow</strong> of many data-heavy sites
+              with <strong>Redux</strong>.
+            </p>
+          }
+          institutionOrCompanyName="Airly Studio"
+          positionOrCourse="Full Stack Softwate Engineer (2024 - Present)"
+        />
       </section>
     </Element>
   );

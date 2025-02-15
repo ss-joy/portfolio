@@ -25,7 +25,7 @@ const CertificateCard = ({
   return (
     <div className="flex flex-col justify-between bg-white rounded-md p-2 aspect-square overflow-hidden">
       <Dialog>
-        <DialogTrigger asChild>
+        <DialogTrigger asChild className="hover:cursor-pointer">
           <Image
             src={image}
             width={500}

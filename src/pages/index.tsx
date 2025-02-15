@@ -1,4 +1,5 @@
 import Intro from "@/components/About";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/contact/Contact";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
@@ -16,6 +17,7 @@ export default function Home() {
         <Experience />
         <Skills />
         <Projects />
+        <Certifications />
         <Education />
         <Contact />
         <ScrollToTop />

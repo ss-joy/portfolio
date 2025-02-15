@@ -1,6 +1,7 @@
 import { NavItem } from "@/types";
 
 import {
+  BookCheck,
   Building2Icon,
   Contact,
   PenIcon,
@@ -24,6 +25,10 @@ const navItems: NavItem[] = [
     icon: <ProjectorIcon className="h-4" />,
   },
   {
+    title: "Certifications",
+    icon: <BookCheck className="h-4" />,
+  },
+  {
     title: "Skills",
     icon: <SettingsIcon className="h-4" />,
   },
@@ -37,7 +42,7 @@ const NavBar = () => {
   const [activeLink, setActiveLink] = useState<string>("");
   console.log(activeLink);
   return (
-    <nav className="bg-sky-600 max-w-[740px] mx-auto flex justify-between items-center mt-8 mb-4 shadow-sm shadow-sky-300 p-2 rounded-3xl gap-2">
+    <nav className="bg-sky-600 w-fit mx-auto flex justify-between items-center mt-8 mb-4 shadow-sm shadow-sky-300 p-2 rounded-3xl gap-2">
       {navItems.map((navItem, index) => (
         <Link
           to={navItem.title}

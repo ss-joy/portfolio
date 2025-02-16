@@ -40,7 +40,7 @@ const Experience = () => {
           imageLink={airly}
           companyOrInstitutionLink="https://airlystudio.com/"
           description={
-            <p className="text-sky-800">
+            <>
               Developed and maintained web applications tailored to client
               requirements using modern JavaScript frameworks and technologies.
               Ensured responsiveness and cross-browser compatibility. Worked
@@ -55,7 +55,7 @@ const Experience = () => {
               <strong> antd Library</strong> and manage entire{" "}
               <strong>state management flow</strong> of many data-heavy sites
               with <strong>Redux</strong>.
-            </p>
+            </>
           }
           institutionOrCompanyName="Airly Studio"
           positionOrCourse="Full Stack Softwate Engineer (2024 - Present)"

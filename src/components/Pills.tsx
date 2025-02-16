@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 
-const skills: Skill[] = [
+export const skills: Skill[] = [
   {
     name: "JavaScript",
     iconUrl: "https://cdn.simpleicons.org/javascript/F7DF1E",
@@ -22,8 +22,8 @@ const skills: Skill[] = [
   { name: "Express.js", iconUrl: "https://cdn.simpleicons.org/express/000000" },
   { name: "NestJS", iconUrl: "https://cdn.simpleicons.org/nestjs/E0234E" },
   { name: "React.js", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
-  { name: "Pug.js", iconUrl: "https://cdn.simpleicons.org/pug/61DAFB" },
-  { name: "Pug.js", iconUrl: "https://cdn.simpleicons.org/ejs/61DAFB" },
+  { name: "Pug.js", iconUrl: "https://cdn.simpleicons.org/pug/A86454" },
+  { name: "EJS", iconUrl: "https://cdn.simpleicons.org/ejs/000000" },
   { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs/000000" },
   { name: "Redux", iconUrl: "https://cdn.simpleicons.org/redux/764ABC" },
   { name: "Vue.js", iconUrl: "https://cdn.simpleicons.org/vuedotjs/4FC08D" },
@@ -32,31 +32,60 @@ const skills: Skill[] = [
     name: "Mongoose.js",
     iconUrl: "https://cdn.simpleicons.org/mongoose/A03430",
   },
+  {
+    name: "Yup",
+    iconUrl:
+      "https://miro.medium.com/v2/resize:fit:1067/1*8pLiWUrglmnzfBYf1XJ4TA.jpeg",
+  },
+  { name: "Zod", iconUrl: "https://cdn.simpleicons.org/zod/A03430" },
+  {
+    name: "React Hook Form",
+    iconUrl: "https://cdn.simpleicons.org/reacthookform/A03430",
+  },
+  {
+    name: "Formik",
+    iconUrl: "https://cdn.simpleicons.org/formik/764ABC",
+  },
   { name: "MySQL", iconUrl: "https://cdn.simpleicons.org/mysql/4479A1" },
   { name: "Linux", iconUrl: "https://cdn.simpleicons.org/linux/FCC624" },
   { name: "Git", iconUrl: "https://cdn.simpleicons.org/git/F05032" },
-  { name: "GitHub", iconUrl: "https://cdn.simpleicons.org/github/F05032" },
-
+  { name: "GitHub", iconUrl: "https://cdn.simpleicons.org/github/181717" },
   { name: "Docker", iconUrl: "https://cdn.simpleicons.org/docker/2496ED" },
   { name: "Python", iconUrl: "https://cdn.simpleicons.org/python/3776AB" },
   { name: "Craft CMS", iconUrl: "https://cdn.simpleicons.org/craftcms/EF4A42" },
+  {
+    name: "React Query",
+    iconUrl: "https://cdn.simpleicons.org/reactquery/FF4154",
+  },
+  {
+    name: "RTK Query",
+    iconUrl: "https://cdn.simpleicons.org/redux/764ABC",
+  },
+  {
+    name: "Php",
+    iconUrl: "https://cdn.simpleicons.org/php/777BB4",
+  },
+  {
+    name: "Twig",
+    iconUrl: "https://twig.symfony.com/images/logo.md.png",
+  },
+  {
+    name: "FireBase",
+    iconUrl: "https://cdn.simpleicons.org/firebase/FFCA28",
+  },
+  {
+    name: "Supabase",
+    iconUrl: "https://cdn.simpleicons.org/supabase/3ECF8E",
+  },
 ];
+
 const Pills = () => {
   return (
-    <section className="flex gap-2 flex-wrap justify-center w-full mx-auto">
+    <section className="flex gap-5 flex-wrap justify-center w-full mx-auto">
       {skills.map((skill, index) => (
         <motion.p
           key={index}
           className="relative z-10 flex gap-1 bg-white items-center text-[#78909c] rounded-lg p-2 hover:cursor-pointer shadow-sm shadow-slate-300 hover:ring-2 hover:ring-sky-600 transition-all"
-          initial={{
-            opacity: 0.5,
-          }}
-          whileInView={{
-            opacity: 1,
-            transition: {
-              duration: 1.8,
-            },
-          }}
           whileHover={{
             scale: 1.1,
             transition: {
@@ -65,13 +94,13 @@ const Pills = () => {
             },
           }}
         >
-          {skill.name}
+          <span className="text-2xl">{skill.name}</span>
           <Image
             src={skill.iconUrl}
             alt="Skill icon"
             width={50}
             height={50}
-            className="size-[18px]"
+            className="size-[22px]"
           />{" "}
         </motion.p>
       ))}

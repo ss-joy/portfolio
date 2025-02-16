@@ -110,7 +110,7 @@ const Pills = () => {
     <motion.section
       variants={parentVariants}
       initial="init"
-      animate="appear"
+      whileInView="appear"
       className="flex gap-5 flex-wrap justify-center w-full mx-auto"
     >
       {skills.map((skill, index) => (

@@ -16,7 +16,7 @@ const Certifications = () => {
           Certifications
           <PaperclipIcon className="text-white absolute size-16 -top-12 left-[-64px] border-2 border-white rounded-full p-2 animate-pulse" />
         </h2>
-        <div className="relative z-20 grid grid-cols-auto-200 gap-x-6 gap-y-6">
+        <div className="relative z-20 grid grid-cols-auto-300 gap-x-6 gap-y-6">
           <Image
             src={BookMarkIcon}
             alt="book mark icon"

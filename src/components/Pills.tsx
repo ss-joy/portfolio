@@ -79,20 +79,48 @@ export const skills: Skill[] = [
   },
 ];
 
+const parentVariants = {
+  init: {},
+  appear: {
+    transition: {
+      staggerChildren: 0.02,
+    },
+  },
+};
+
+const childVariants = {
+  init: {
+    opacity: 0,
+    x: -50,
+    scale: 0.3,
+  },
+  appear: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 180,
+    },
+  },
+};
+
 const Pills = () => {
   return (
-    <section className="flex gap-5 flex-wrap justify-center w-full mx-auto">
+    <motion.section
+      variants={parentVariants}
+      initial="init"
+      animate="appear"
+      className="flex gap-5 flex-wrap justify-center w-full mx-auto"
+    >
       {skills.map((skill, index) => (
-        <motion.p
+        <motion.li
+          variants={childVariants}
           key={index}
-          className="relative z-10 flex gap-1 bg-white items-center text-[#78909c] rounded-lg p-2 hover:cursor-pointer shadow-sm shadow-slate-300 hover:ring-2 hover:ring-sky-600 transition-all"
           whileHover={{
-            scale: 1.1,
-            transition: {
-              type: "spring",
-              velocity: 2,
-            },
+            border: "2px solid #0284c7 ",
           }}
+          className="border-[2px] border-transparent relative z-10 flex gap-1 bg-white items-center text-[#78909c] rounded-lg p-2 hover:cursor-pointer shadow-sm shadow-slate-300"
         >
           <span className="text-2xl">{skill.name}</span>
           <Image
@@ -102,9 +130,9 @@ const Pills = () => {
             height={50}
             className="size-[22px]"
           />{" "}
-        </motion.p>
+        </motion.li>
       ))}
-    </section>
+    </motion.section>
   );
 };
 

@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.simpleicons.org",
       },
+      {
+        protocol: "https",
+        hostname: "twig.symfony.com",
+      },
+      {
+        protocol: "https",
+        hostname: "miro.medium.com",
+      },
     ],
     dangerouslyAllowSVG: true,
   },

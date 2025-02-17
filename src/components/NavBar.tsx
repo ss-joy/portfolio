@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-scroll";
+import { motion } from "motion/react";
 
 const navItems: NavItem[] = [
   {
@@ -40,9 +41,10 @@ const navItems: NavItem[] = [
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState<string>("");
-  console.log(activeLink);
+  const [hoveredLink, setHoveredLink] = useState<string>("");
+
   return (
-    <nav className="bg-sky-600 w-fit mx-auto flex justify-between items-center mt-8 mb-4 shadow-sm shadow-sky-300 p-2 rounded-3xl gap-2">
+    <nav className="bg-sky-600 w-fit mx-auto flex justify-between items-center mt-8 mb-4 shadow-sm shadow-sky-300 p-2 rounded-3xl gap-2 relative z-[30]">
       {navItems.map((navItem, index) => (
         <Link
           to={navItem.title}
@@ -51,14 +53,25 @@ const NavBar = () => {
           duration={1000}
           spy={true}
           onClick={() => setActiveLink(navItem.title)}
-          className={`flex items-center justify-between font-bold ${
-            activeLink === navItem.title
-              ? " bg-white text-sky-600"
+          onMouseOver={() => setHoveredLink(navItem.title)}
+          onMouseLeave={() => setHoveredLink(activeLink)}
+          className={`flex items-center justify-between font-bold relative ${
+            activeLink === navItem.title || hoveredLink === navItem.title
+              ? "text-sky-600"
               : "text-white"
-          } gap-2 py-1 px-5 rounded-3xl hover:cursor-pointer hover:scale-105 transition-all hover:bg-white hover:text-sky-600`}
+          } gap-2 py-1 px-5 rounded-3xl hover:cursor-pointer`}
         >
           {navItem.title}
           {navItem.icon}
+          {hoveredLink === navItem.title ? (
+            <motion.div
+              layoutId="follow-nav-cursor"
+              className="absolute w-full rounded-3xl bg-white h-full inset-0 z-[-1]"
+            ></motion.div>
+          ) : null}
+          {activeLink === navItem.title ? (
+            <motion.div className="absolute w-full rounded-3xl bg-white h-full inset-0 z-[-2]"></motion.div>
+          ) : null}
         </Link>
       ))}
     </nav>

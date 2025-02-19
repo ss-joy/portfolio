@@ -12,9 +12,9 @@ const Certifications = () => {
   return (
     <Element name="Certifications">
       <section className="w-full min-h-screen pt-12">
-        <h2 className="text-white text-5xl font-bold mt-[64px] pb-6 relative">
+        <h2 className="text-white text-4xl md:text-5xl font-bold mt-[64px] pb-6 relative">
           Certifications
-          <PaperclipIcon className="text-white absolute size-16 -top-12 left-[-64px] border-2 border-white rounded-full p-2 animate-pulse" />
+          <PaperclipIcon className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
         </h2>
         <div className="relative z-20 grid grid-cols-auto-300 gap-x-6 gap-y-6">
           <Image

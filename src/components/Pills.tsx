@@ -111,7 +111,7 @@ const Pills = () => {
       variants={parentVariants}
       initial="init"
       whileInView="appear"
-      className="flex gap-5 flex-wrap justify-center w-full mx-auto"
+      className="flex gap-2 md:gap-5 flex-wrap justify-center w-full mx-auto"
     >
       {skills.map((skill, index) => (
         <motion.li
@@ -119,6 +119,9 @@ const Pills = () => {
           key={index}
           whileHover={{
             border: "2px solid #0284c7 ",
+          }}
+          viewport={{
+            once: true,
           }}
           className="border-[2px] border-transparent relative z-10 flex gap-1 bg-white items-center text-[#78909c] rounded-lg p-2 hover:cursor-pointer shadow-sm shadow-slate-300"
         >

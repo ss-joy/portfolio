@@ -74,6 +74,9 @@
       rgba(177, 229, 242, 0) 100%
     );
   }
+  .backdrop-blur-24 {
+    backdrop-filter: blur(24px);
+  }
 }
 
 @layer base {

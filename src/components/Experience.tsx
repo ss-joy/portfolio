@@ -2,8 +2,6 @@ import { TimerIcon } from "lucide-react";
 import React from "react";
 import { Element } from "react-scroll";
 import airly from "@/../public/experience/airly.jpg";
-import Image from "next/image";
-import Link from "next/link";
 import ExperienceCalender from "./experience/ExperienceCalender";
 import CardWithAnimatedBorder from "./common/CardWithAnimatedBorder";
 
@@ -11,9 +9,9 @@ const Experience = () => {
   return (
     <Element name="Experience">
       <section className="w-full min-h-screen pt-12">
-        <h2 className="text-sky-600 text-5xl font-bold mt-[64px] pb-6 relative">
+        <h2 className="text-sky-600 text-4xl md:text-5xl font-bold mt-[64px] pb-6 relative">
           Experience
-          <TimerIcon className="absolute size-16 -top-12 left-[-64px] -rotate-45 border-2 border-sky-600 rounded-full p-2 animate-pulse" />
+          <TimerIcon className="text-sky-600 absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-sky-600 rounded-full p-2 animate-pulse" />
         </h2>
         <p className="text-sky-800">
           As a hobby, I always try to keep up with the latest trends in the
@@ -36,7 +34,7 @@ const Experience = () => {
 
         <ExperienceCalender years={1} />
 
-        <CardWithAnimatedBorder
+        {/* <CardWithAnimatedBorder
           imageLink={airly}
           companyOrInstitutionLink="https://airlystudio.com/"
           description={
@@ -59,7 +57,7 @@ const Experience = () => {
           }
           institutionOrCompanyName="Airly Studio"
           positionOrCourse="Full Stack Softwate Engineer (2024 - Present)"
-        />
+        /> */}
       </section>
     </Element>
   );

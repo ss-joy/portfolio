@@ -9,6 +9,7 @@ import FooterGradient from "./FooterGradient";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import LinkedIn from "@/../public/images/contacts/LinkedInIcon.svg";
 import SectionHeader from "../common/SectionHeader";
+import { v4 } from "uuid";
 
 type ContactInfo = {
   iconUrl: string | StaticImport;
@@ -52,9 +53,10 @@ const Contact = () => {
         </SectionHeader>
 
         <div className="grid grid-cols-2 gap-y-4 gap-x-16 items-center place-items-center h-1/2 w-1/2 mx-auto relative z-20">
-          {contactInfos.map((cinfo, index) => {
+          {contactInfos.map((cinfo) => {
             return (
               <motion.div
+                key={v4()}
                 whileHover={{
                   scale: 0.7,
                   transition: {
@@ -65,7 +67,6 @@ const Contact = () => {
                 }}
               >
                 <Link
-                  key={index}
                   href={cinfo.idLink}
                   target="_blank"
                   className={`block size-[100px] md:size-[200px] hover:border-b-[10px] pb-8 border-b-white transition-all`}

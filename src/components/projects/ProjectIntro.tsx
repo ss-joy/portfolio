@@ -4,6 +4,7 @@ import { PointerIcon } from "lucide-react";
 import Image from "next/image";
 import nodeJs from "@/../public/icons/nodejs.png";
 import { motion } from "motion/react";
+import { v4 } from "uuid";
 
 const largeSectionVariants = {
   blurred: {},
@@ -85,6 +86,7 @@ const ProjectIntro = () => {
         >
           {"Full Stack".split("").map((l) => (
             <motion.span
+              key={v4()}
               viewport={{
                 once: true,
               }}
@@ -151,6 +153,7 @@ const ProjectIntro = () => {
         >
           {"MERN".split("").map((l) => (
             <motion.span
+              key={v4()}
               viewport={{
                 once: true,
               }}

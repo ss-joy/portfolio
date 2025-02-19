@@ -34,7 +34,7 @@ const Experience = () => {
 
         <ExperienceCalender years={1} />
 
-        {/* <CardWithAnimatedBorder
+        <CardWithAnimatedBorder
           imageLink={airly}
           companyOrInstitutionLink="https://airlystudio.com/"
           description={
@@ -57,7 +57,7 @@ const Experience = () => {
           }
           institutionOrCompanyName="Airly Studio"
           positionOrCourse="Full Stack Softwate Engineer (2024 - Present)"
-        /> */}
+        />
       </section>
     </Element>
   );

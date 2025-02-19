@@ -25,7 +25,7 @@ const CardWithAnimatedBorder = ({
     <div className="relative z-10 mt-8 rounded-lg p-[2px] overflow-hidden">
       <div
         className={cn(
-          "relative w-full h-full p-7 flex items-start gap-4 bg-sky-100 rounded-lg after:content-[''] after:h-[600%] after:w-[200%] after:absolute after:rounded-lg after:gradient-border-background after:animate-spin-slow after:animate-reverse after:-top-[250%] after:-left-1/2 after:z-[-1]",
+          "relative w-full h-full p-7 flex flex-col  md:flex-row items-center md:items-start gap-4 bg-sky-100 rounded-lg after:content-[''] after:h-[600%] after:w-[200%] after:absolute after:rounded-lg after:gradient-border-background after:animate-spin-slow after:animate-reverse after:-top-[250%] after:-left-1/2 after:z-[-1]",
           cardCss
         )}
       >
@@ -34,7 +34,7 @@ const CardWithAnimatedBorder = ({
           width={200}
           height={200}
           alt="company logo"
-          className="min-w-[200px]"
+          className="min-w-[200px] max-w-[300px] w-full md:w-auto"
         />
         <div className="px-2 flex flex-col gap-2">
           <Link

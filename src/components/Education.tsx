@@ -17,7 +17,7 @@ const Education = () => {
         <CardWithAnimatedBorder
           imageLink={sust}
           companyOrInstitutionLink="https://www.sust.edu/"
-          description={<>SSC</>}
+          description={<>B.Sc. (Engg.)</>}
           institutionOrCompanyName="Shahjalal University of Science and Technology"
           positionOrCourse="B.Sc. (Engg.) in Computer Science and Engineering"
           cardCss="bg-sky-200"

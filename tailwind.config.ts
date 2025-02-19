@@ -85,6 +85,8 @@ export default {
       },
       gridTemplateColumns: {
         "auto-300": "repeat(auto-fit,minmax(300px,1fr))",
+        "auto-500": "repeat(auto-fit,minmax(500px,1fr))",
+        "auto-340": "repeat(auto-fit,minmax(340px,1fr))",
       },
       gridTemplateRows: {
         "auto-300": "repeat(auto-fit,minmax(150px,1fr))",
@@ -135,6 +137,13 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+      },
+
+      screens: {
+        sm: "360px",
+        md: "768px",
+        lg: "1440px",
+        xl: "1920px",
       },
     },
   },

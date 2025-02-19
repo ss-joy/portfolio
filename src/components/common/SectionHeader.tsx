@@ -43,6 +43,9 @@ const SectionHeader = ({
       variants={h2Variants}
       initial="atBottom"
       whileInView="comeToMiddle"
+      viewport={{
+        once: true,
+      }}
       className={tw(
         "text-sky-600 text-4xl md:text-5xl font-bold mt-[64px] pb-6 relative",
         className
@@ -54,6 +57,9 @@ const SectionHeader = ({
           key={v4()}
           variants={spanVariants}
           className="inline-block"
+          viewport={{
+            once: true,
+          }}
         >
           {t}
         </motion.span>

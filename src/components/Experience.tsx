@@ -1,12 +1,30 @@
 import { TimerIcon } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Element } from "react-scroll";
 import airly from "@/../public/experience/airly.jpg";
 import ExperienceCalender from "./experience/ExperienceCalender";
 import CardWithAnimatedBorder from "./common/CardWithAnimatedBorder";
 import SectionHeader from "./common/SectionHeader";
+import { motion } from "motion/react";
 
 const Experience = () => {
+  const [year, setYear] = useState(0.1);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setYear((p) => {
+        if (p < 2) {
+          return p + 0.5;
+        }
+        return p;
+      });
+    }, 500);
+
+    return () => {
+      clearInterval(t);
+    };
+  }, []);
+
   return (
     <Element name="Experience">
       <section className="w-full min-h-screen pt-12">
@@ -16,8 +34,29 @@ const Experience = () => {
         <p className="text-sky-800">
           As a hobby, I always try to keep up with the latest trends in the
           industry. With over{" "}
-          <span className="bg-white rounded-md font-bold shadow p-1">
-            2 years
+          <span className="bg-white rounded-md font-bold shadow p-1 text-xl">
+            <motion.span
+              initial={{
+                scale: 0.8,
+                y: 10,
+                opacity: 0,
+              }}
+              animate={{
+                scale: [1, 1.5, 1],
+                y: [-10, 0],
+                opacity: [1, 0, 1],
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                duration: 2,
+              }}
+              key={year}
+              className="inline-block px-1"
+            >
+              {year < 2 ? year.toFixed(1) : year.toFixed(0)}
+            </motion.span>{" "}
+            years
           </span>{" "}
           of experience, which includes 1 year of professional experience, I
           have had hands-on experience in developing multiple feature-rich,

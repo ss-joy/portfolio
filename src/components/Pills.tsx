@@ -111,6 +111,9 @@ const Pills = () => {
       variants={parentVariants}
       initial="init"
       whileInView="appear"
+      viewport={{
+        once: true,
+      }}
       className="flex gap-2 md:gap-5 flex-wrap justify-center w-full mx-auto"
     >
       {skills.map((skill, index) => (

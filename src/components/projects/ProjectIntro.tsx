@@ -17,7 +17,7 @@ const ProjectIntro = () => {
         <div className="text-5xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent  leading-[3]">
           Professional
         </div>{" "}
-        <div className="text-4xl md:text-5xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent  leading-[3]">
+        <div className="text-3xl md:text-5xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent  leading-[3]">
           Projects Completed
         </div>{" "}
       </div>

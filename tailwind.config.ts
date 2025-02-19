@@ -49,25 +49,25 @@ export default {
             transform: "translate(0, 0)",
           },
           "20%": {
-            transform: "translate(-50px, 80px)",
+            transform: "translate(-50px, -80px)",
           },
           "30%": {
-            transform: "translate(-160px, -30px)",
+            transform: "translate(-100px, -130px)",
           },
           "40%": {
-            transform: "translate(-40px, 20px)",
+            transform: "translate(-40px, -20px)",
           },
           "50%": {
             transform: "translate(-50px, -50px)",
           },
           "60%": {
-            transform: "translate(-60px, 30px)",
+            transform: "translate(-60px, -30px)",
           },
           "70%": {
             transform: "translate(-40px, -60px)",
           },
           "80%": {
-            transform: "translate(-30px, 50px)",
+            transform: "translate(-30px, -50px)",
           },
           "90%": {
             transform: "translate(20px, -40px)",

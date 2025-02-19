@@ -8,6 +8,7 @@ import BlurBall from "./BlurBall";
 import FooterGradient from "./FooterGradient";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import LinkedIn from "@/../public/images/contacts/LinkedInIcon.svg";
+import SectionHeader from "../common/SectionHeader";
 
 type ContactInfo = {
   iconUrl: string | StaticImport;
@@ -46,10 +47,9 @@ const Contact = () => {
   return (
     <Element name="Contact">
       <section className="w-full min-h-screen pt-12 relative">
-        <h2 className="text-white text-4xl md:text-5xl font-bold mt-[64px] pb-6 relative">
-          Contact Me
+        <SectionHeader headingText="Contact Me" className="text-white">
           <Satellite className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
-        </h2>
+        </SectionHeader>
 
         <div className="grid grid-cols-2 gap-y-4 gap-x-16 items-center place-items-center h-1/2 w-1/2 mx-auto relative z-20">
           {contactInfos.map((cinfo, index) => {
@@ -68,7 +68,7 @@ const Contact = () => {
                   key={index}
                   href={cinfo.idLink}
                   target="_blank"
-                  className={`block size-[100px] hover:border-b-[10px] pb-8 border-b-white transition-all`}
+                  className={`block size-[100px] md:size-[200px] hover:border-b-[10px] pb-8 border-b-white transition-all`}
                 >
                   <Image
                     src={cinfo.iconUrl}

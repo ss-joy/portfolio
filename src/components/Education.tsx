@@ -5,15 +5,15 @@ import CardWithAnimatedBorder from "./common/CardWithAnimatedBorder";
 import mzs from "@/../public/images/education/mzs.png";
 import amc from "@/../public/images/education/amc.png";
 import sust from "@/../public/images/education/sust.png";
+import SectionHeader from "./common/SectionHeader";
 
 const Education = () => {
   return (
     <Element name="Education">
       <section className="w-full min-h-screen pt-12">
-        <h2 className="text-white text-4xl md:text-5xl font-bold mt-[64px] pb-6 relative">
-          Education
+        <SectionHeader headingText="Education" className="text-white">
           <School className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
-        </h2>
+        </SectionHeader>
         <CardWithAnimatedBorder
           imageLink={sust}
           companyOrInstitutionLink="https://www.sust.edu/"

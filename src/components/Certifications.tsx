@@ -7,15 +7,15 @@ import udeymyGitBasics from "@/../public/certifications/udemy-git-basics.jpg";
 import CertificateCard from "./certifications/CertificateCard";
 import BookMarkIcon from "@/../public/icons/bookmark.png";
 import Image from "next/image";
+import SectionHeader from "./common/SectionHeader";
 
 const Certifications = () => {
   return (
     <Element name="Certifications">
       <section className="w-full min-h-screen pt-12">
-        <h2 className="text-white text-4xl md:text-5xl font-bold mt-[64px] pb-6 relative">
-          Certifications
+        <SectionHeader headingText="Certifications" className="text-white">
           <PaperclipIcon className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
-        </h2>
+        </SectionHeader>
         <div className="relative z-20 grid grid-cols-auto-300 gap-x-6 gap-y-6">
           <Image
             src={BookMarkIcon}

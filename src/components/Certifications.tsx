@@ -20,9 +20,9 @@ const Certifications = () => {
           <Image
             src={BookMarkIcon}
             alt="book mark icon"
-            width={500}
-            height={500}
-            className="-rotate-45 absolute z-[-1] w-[800px] top-0 left-0 animate-tilt-small"
+            width={300}
+            height={300}
+            className="-rotate-45 absolute z-[-1] w-[300px] top-60 left-0 animate-tilt-small"
           />
           <CertificateCard
             image={hackerRankReactBasics}

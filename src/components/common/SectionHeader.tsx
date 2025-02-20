@@ -51,7 +51,6 @@ const SectionHeader = ({
         className
       )}
     >
-      {" "}
       {headingText.split("").map((t) => (
         <motion.span
           key={v4()}
@@ -61,7 +60,7 @@ const SectionHeader = ({
             once: true,
           }}
         >
-          {t}
+          {t === " " ? "\u00A0" : t}
         </motion.span>
       ))}
       {children}

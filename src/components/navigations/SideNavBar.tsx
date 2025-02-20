@@ -16,11 +16,8 @@ export function SideNavBar() {
   const [activeLink, setActiveLink] = useState<string>("");
   return (
     <Sheet>
-      <SheetTrigger
-        asChild
-        className="fixed right-2 top-1/2 z-40 min-[960px]:hidden"
-      >
-        <ChevronsLeft />
+      <SheetTrigger asChild className="min-[960px]:hidden">
+        <ChevronsLeft className="fixed right-2 top-1/2 z-[999]" />
       </SheetTrigger>
       <SheetContent className="backdrop-blur-12 bg-white/5 w-fit">
         \**\

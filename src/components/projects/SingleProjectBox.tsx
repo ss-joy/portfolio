@@ -38,7 +38,7 @@ const SingleProjectBox = ({
       // }}
       className="p-3 bg-white/40 rounded-lg backdrop-blur-24"
     >
-      <h1 className={"text-7xl my-8 " + ` ${projectNameColor} `}>
+      <h1 className={"text-4xl md:text-7xl my-8 " + ` ${projectNameColor} `}>
         {projectName}
       </h1>
       <Image

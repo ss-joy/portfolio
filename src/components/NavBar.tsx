@@ -44,7 +44,7 @@ const NavBar = () => {
   const [hoveredLink, setHoveredLink] = useState<string>("");
 
   return (
-    <nav className="bg-sky-600 w-fit mx-auto justify-between items-center mt-8 mb-4 shadow-sm shadow-sky-300 p-2 rounded-3xl relative z-[30] hidden min-[960px]:flex">
+    <nav className="bg-sky-600 w-fit mx-auto justify-between items-center gap-2 mt-8 mb-4 shadow-sm shadow-sky-300 p-2 rounded-3xl relative z-[30] hidden min-[960px]:flex">
       {navItems.map((navItem, index) => (
         <Link
           to={navItem.title}
@@ -59,7 +59,7 @@ const NavBar = () => {
             activeLink === navItem.title || hoveredLink === navItem.title
               ? "text-sky-600"
               : "text-white"
-          } gap-2 py-1 px-1 rounded-3xl hover:cursor-pointer`}
+          } gap-2 py-1 px-4 rounded-3xl hover:cursor-pointer`}
         >
           {navItem.title}
           {navItem.icon}

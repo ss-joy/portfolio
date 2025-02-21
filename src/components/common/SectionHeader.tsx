@@ -13,7 +13,7 @@ const h2Variants = {
   atBottom: {},
   comeToMiddle: {
     transition: {
-      staggerChildren: 0.09,
+      staggerChildren: 0.3,
     },
   },
 };
@@ -23,12 +23,11 @@ const spanVariants = {
     y: 10,
   },
   comeToMiddle: {
-    opacity: 0.9,
+    opacity: 1,
     y: 0,
     transition: {
-      duration: 0.001,
-      type: "spring",
-      stiffness: 200,
+      duration: 0.5,
+      type: "tween",
     },
   },
 };
@@ -56,9 +55,6 @@ const SectionHeader = ({
           key={v4()}
           variants={spanVariants}
           className="inline-block"
-          viewport={{
-            once: true,
-          }}
         >
           {t === " " ? "\u00A0" : t}
         </motion.span>

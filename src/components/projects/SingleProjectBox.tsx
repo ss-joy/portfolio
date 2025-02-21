@@ -7,6 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import AnimatedChevronRight from "./AnimatedChevronRight";
 
 type SingleProjectBoxProps = {
   image: StaticImport;
@@ -19,28 +20,46 @@ const SingleProjectBox = ({
   projectName,
   projectNameColor,
 }: SingleProjectBoxProps) => {
-  const targetRef = useRef(null);
-  // const { scrollY, scrollYProgress } = useScroll({
-  //   target: targetRef,
-  //   offset: ["start end", "end start"],
-  // });
-  // const opacityY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start 45%"],
+  });
 
-  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
-  //   console.log("target scroll: ", latest);
+  const { scrollYProgress: scrollYProgressForScaling } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start start"],
+  });
+
+  // useMotionValueEvent(scrollYProgressForScaling, "change", (latest) => {
+  //   console.log("Page scroll: ", latest);
   // });
+  const containerOpacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+  const containerScale = useTransform(
+    scrollYProgressForScaling,
+    [0, 1],
+    [1, 1.03]
+  );
 
   return (
     <motion.div
-      ref={targetRef}
-      // style={{
-      //   opacity: opacityY,
-      // }}
+      ref={containerRef}
+      style={{
+        opacity: containerOpacity,
+        scale: containerScale,
+      }}
       className="p-3 bg-white/40 rounded-lg backdrop-blur-24"
     >
-      <h1 className={"text-4xl md:text-7xl my-8 " + ` ${projectNameColor} `}>
-        {projectName}
-      </h1>
+      <motion.div
+        initial="initial"
+        whileHover="animate"
+        className="flex justify-between items-center"
+      >
+        <h1 className={"text-4xl md:text-7xl my-8 " + ` ${projectNameColor} `}>
+          {projectName}
+        </h1>
+        <AnimatedChevronRight />
+      </motion.div>
       <Image
         src={image}
         width={1100}

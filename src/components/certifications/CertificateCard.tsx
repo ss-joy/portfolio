@@ -34,9 +34,9 @@ const CertificateCard = ({
             alt="certificate image"
           />
         </DialogTrigger>
-        <DialogContent className="max-w-none w-[1080px] border border-black">
+        <DialogContent className="max-w-none w-[90%] mt-2">
           <DialogHeader>
-            <DialogTitle>{title}</DialogTitle>
+            <DialogTitle className="text-slate-600">{title}</DialogTitle>
           </DialogHeader>
           <Image
             src={image}

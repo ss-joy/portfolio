@@ -1,11 +1,9 @@
+import SectionHeader from "../common/SectionHeader";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { SkillName } from "@/types";
 import { ExternalLinkIcon, Projector } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 import { Element } from "react-scroll";
-import { motion } from "motion/react";
-import { skills } from "../Pills";
 import ProjectIntro from "./ProjectIntro";
 import riseStaffing from "@/../public/images/uplift/cropped/staffing_3.png";
 import boxyClient from "@/../public/images/boxy/cropped/boxy_client_3.png";
@@ -15,18 +13,30 @@ import airlyFormBuilder from "@/../public/images/airly-admin/cropped/admin_form_
 import airlyCareer from "@/../public/images/airly/cropped/airly_career_3.png";
 import ast from "@/../public/images/ast/cropped/ast_3.png";
 import we from "@/../public/images/webuy/cropped/we_3.png";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import SingleProjectBox from "./SingleProjectBox";
 import { v4 } from "uuid";
-import SectionHeader from "../common/SectionHeader";
 
-type Project = {
+import uplift1 from "@/../public/images/uplift/caro/1.png";
+import uplift2 from "@/../public/images/uplift/caro/2.png";
+import uplift3 from "@/../public/images/uplift/caro/3.png";
+import uplift4 from "@/../public/images/uplift/caro/4.png";
+
+import boxyC1 from "@/../public/images/boxy/caro/boxyc1.png";
+import boxyC2 from "@/../public/images/boxy/caro/boxyc2.png";
+import boxyC3 from "@/../public/images/boxy/caro/boxyc3.png";
+
+import boxyF1 from "@/../public/images/boxy/caro/boxyf1.png";
+import boxyF2 from "@/../public/images/boxy/caro/boxyf2.png";
+import boxyF3 from "@/../public/images/boxy/caro/boxyf3.png";
+
+export type Project = {
   projectName: string;
   isLive: boolean;
   liveLink?: string;
   colorScheme: string;
-  skills: SkillName[];
+  skillsUsed: SkillName[];
   projectPrimayImage: StaticImport;
+  carouselImages: StaticImport[];
 };
 const projects: Project[] = [
   {
@@ -34,44 +44,49 @@ const projects: Project[] = [
     projectName: "Uplift",
     liveLink: "https://upliftnw.org/",
     colorScheme: "text-green-800",
-    skills: ["Php", "Twig", "Craft CMS", "MySQL"],
+    skillsUsed: ["Php", "Twig", "Craft CMS", "MySQL"],
     projectPrimayImage: riseStaffing,
+    carouselImages: [uplift1, uplift2, uplift3, uplift4],
   },
   {
     isLive: false,
     projectName: "Boxy Client Dashboard",
     colorScheme: "text-cyan-800",
-    skills: ["Next.js", "Tailwind CSS", "Formik", "Yup"],
+    skillsUsed: ["Next.js", "Tailwind CSS", "Formik", "Yup"],
     projectPrimayImage: boxyClient,
+    carouselImages: [boxyC1, boxyC2, boxyC3],
   },
   {
     isLive: false,
     projectName: "Boxy Fighter Dashboard",
     colorScheme: "text-cyan-800",
-    skills: ["Next.js", "Tailwind CSS", "Formik", "Yup"],
+    skillsUsed: ["Next.js", "Tailwind CSS", "Formik", "Yup"],
     projectPrimayImage: boxyFighter,
+    carouselImages: [boxyF1, boxyF2, boxyF3],
   },
   {
     isLive: false,
     projectName: "Dispense Go",
     colorScheme: "text-green-800",
-    skills: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
+    skillsUsed: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
     projectPrimayImage: dispense,
+    carouselImages: [],
   },
   {
     isLive: true,
     projectName: "AST (Audio Support Tracker)",
     colorScheme: "text-sky-800",
     liveLink: "https://ast-nine.vercel.app/",
-    skills: ["Next.js", "Tailwind CSS"],
+    skillsUsed: ["Next.js", "Tailwind CSS"],
     projectPrimayImage: ast,
+    carouselImages: [],
   },
   {
     isLive: true,
     projectName: "WeBuy",
     colorScheme: "text-sky-800",
     liveLink: "https://we-buy-omega.vercel.app/",
-    skills: [
+    skillsUsed: [
       "Next.js",
       "NestJS",
       "Redux",
@@ -80,6 +95,7 @@ const projects: Project[] = [
       "React Hook Form",
     ],
     projectPrimayImage: we,
+    carouselImages: [],
   },
   {
     isLive: false,
@@ -87,7 +103,8 @@ const projects: Project[] = [
     colorScheme: "text-sky-800",
     projectPrimayImage: airlyFormBuilder,
     liveLink: "",
-    skills: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
+    skillsUsed: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
+    carouselImages: [],
   },
   {
     isLive: false,
@@ -95,7 +112,8 @@ const projects: Project[] = [
     projectName: "Airly Carrers",
     liveLink: "",
     projectPrimayImage: airlyCareer,
-    skills: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
+    skillsUsed: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
+    carouselImages: [],
   },
 ];
 
@@ -105,8 +123,6 @@ const Projects = () => {
   const selectedProjectDetails = projects.find(
     (pro) => pro.projectName === selectedProject
   );
-  const getSkillIconUrl = (skillName: SkillName) =>
-    skills.find((skill) => skill.name === skillName)?.iconUrl;
 
   return (
     <Element name="Projects">
@@ -118,25 +134,9 @@ const Projects = () => {
         <ProjectIntro />
 
         <section className="flex flex-col gap-8 md:gap-12 mt-4">
-          {projects.map(
-            ({
-              colorScheme,
-              isLive,
-              projectName,
-              projectPrimayImage,
-              skills,
-              liveLink,
-            }) => {
-              return (
-                <SingleProjectBox
-                  key={v4()}
-                  image={projectPrimayImage}
-                  projectName={projectName}
-                  projectNameColor={colorScheme}
-                />
-              );
-            }
-          )}
+          {projects.map((p) => {
+            return <SingleProjectBox key={v4()} project={p} />;
+          })}
         </section>
       </div>
     </Element>

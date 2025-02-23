@@ -1,6 +1,6 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
+
 import {
   motion,
   useMotionValueEvent,
@@ -9,23 +9,60 @@ import {
 } from "motion/react";
 import AnimatedChevronRight from "./AnimatedChevronRight";
 import {
+  CustomDialogContent,
   Dialog,
-  DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "../ui/dialog";
+import { Project } from "./Projects";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import React from "react";
+import { SkillName } from "@/types";
+import { skills } from "../Pills";
 
 type SingleProjectBoxProps = {
-  image: StaticImport;
-  projectName: string;
-  projectNameColor: string;
+  project: Project;
+};
+
+const revealIconParentVarient = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const revealIconChildVarient = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    type: "spring",
+    stiffness: 500,
+  },
 };
 
 const SingleProjectBox = ({
-  image,
-  projectName,
-  projectNameColor,
+  project: {
+    carouselImages,
+    colorScheme,
+    isLive,
+    projectName,
+    projectPrimayImage,
+    skillsUsed,
+    liveLink,
+  },
 }: SingleProjectBoxProps) => {
   const containerRef = useRef(null);
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -49,6 +86,8 @@ const SingleProjectBox = ({
     [0, 1],
     [1, 1.03]
   );
+  const getSkillIconUrl = (skillName: SkillName) =>
+    skills.find((skill) => skill.name === skillName)?.iconUrl;
 
   return (
     <>
@@ -68,15 +107,13 @@ const SingleProjectBox = ({
             whileHover="animate"
             className="flex justify-between items-center"
           >
-            <h1
-              className={"text-4xl md:text-7xl my-8 " + ` ${projectNameColor} `}
-            >
+            <h1 className={"text-4xl md:text-7xl my-8 " + ` ${colorScheme} `}>
               {projectName}
             </h1>
             <AnimatedChevronRight />
           </motion.div>
           <Image
-            src={image}
+            src={projectPrimayImage}
             width={1100}
             height={900}
             alt="project image"
@@ -86,95 +123,59 @@ const SingleProjectBox = ({
       </>
       <>
         <Dialog open={showModal} onOpenChange={setShowModal}>
-          <DialogContent className="max-w-none w-[90%] mt-20">
+          <CustomDialogContent className="max-w-none w-[90%] backdrop-blur-12 mt-4 bg-sky-100/90">
             <DialogHeader>
               <DialogTitle
-                className={
-                  "text-4xl md:text-7xl my-8 " + ` ${projectNameColor} `
-                }
+                className={"text-4xl md:text-7xl my-8 " + ` ${colorScheme} `}
               >
                 {projectName}
               </DialogTitle>
-              <DialogDescription>ssd</DialogDescription>
             </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <Image
-                src={image}
-                width={1100}
-                height={900}
-                alt="project image"
-                className="w-full h-full rounded-lg"
-              />
-              <div className="grid grid-cols-4 items-center gap-4">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. At est
-                rerum sit nostrum sunt ad, aperiam, aliquid possimus maiores
-                quisquam quam eaque doloremque molestias ut numquam fugiat ipsam
-                hic odit. Lorem, ipsum dolor sit amet consectetur adipisicing
-                elit. In, consequuntur a quis illum nesciunt dicta velit
-                deserunt aperiam assumenda et reiciendis ducimus, aliquam
-                placeat numquam ipsum doloremque, quos quidem blanditiis labore.
-                Molestias sit quasi odit aliquid quidem vitae in excepturi porro
-                commodi maxime sint asperiores, repudiandae architecto?
-                Voluptatibus consequuntur, sunt reprehenderit recusandae est
-                mollitia eos aliquid temporibus. Nemo corrupti quasi vero eos a
-                numquam sed asperiores quod facere inventore quia expedita non
-                fugiat provident minima vitae enim quos suscipit mollitia
-                eligendi praesentium, autem incidunt perferendis? Rerum alias
-                repudiandae odio ab nobis! Veniam, non ut iusto officia, dicta,
-                molestiae ipsa odio qui explicabo eos ad! Dolores consequuntur
-                sint cum obcaecati! Consequatur excepturi saepe deserunt
-                adipisci repellat. Nesciunt eos inventore similique incidunt
-                maiores praesentium aspernatur vero aut quam! Minima quibusdam
-                repellat impedit nisi natus, quod repudiandae culpa labore vel
-                officiis temporibus nemo nam excepturi? Repellat tenetur illo
-                assumenda expedita dicta praesentium maiores consectetur magnam
-                aliquid minima, suscipit, odio ut recusandae ad quos numquam
-                nihil eius porro culpa natus distinctio. Consequuntur quasi
-                impedit dolorum recusandae repudiandae! Eos nobis nihil natus,
-                repudiandae soluta quas, doloribus voluptates eius fugit
-                similique atque nulla mollitia illum quo qui laboriosam laborum
-                nesciunt, dignissimos esse? Temporibus cumque doloremque aut
-                omnis fugit suscipit corporis. Aut aliquam debitis illo
-                accusamus dolore maiores assumenda blanditiis saepe commodi!
-                Minus tempore earum iste magnam quae? Soluta iusto consequatur
-                unde dignissimos enim, modi aliquam minima beatae iste? Totam
-                ducimus sed voluptatem? Reiciendis enim itaque distinctio sed
-                laborum explicabo recusandae est quaerat sequi aperiam. Nisi,
-                ullam. Repellendus minus excepturi necessitatibus soluta
-                pariatur assumenda ab similique libero amet facere molestiae
-                reprehenderit nam laborum consequatur quam iure inventore culpa
-                fuga expedita corporis, ea laboriosam aut perferendis dicta.
-                Recusandae est delectus facere. Dolor obcaecati, rem suscipit
-                vel porro eos, tenetur dolores consectetur dignissimos a
-                voluptatibus quas facilis voluptate sit natus reprehenderit nam
-                laudantium deleniti dolore, inventore earum assumenda corrupti
-                accusamus. Doloremque hic voluptate incidunt itaque quasi eius
-                deserunt, totam alias voluptates, consectetur necessitatibus
-                aliquam expedita! Ipsam, itaque, iste veritatis quo laboriosam,
-                voluptate rem possimus fuga ratione suscipit distinctio nam.
-                Natus repudiandae dolore mollitia at ipsa nostrum, iure unde
-                dolores consectetur, illo incidunt autem aspernatur consequatur
-                alias sint cumque molestias veritatis sunt magni error optio ex
-                aperiam? Molestiae debitis in recusandae deserunt? Nesciunt
-                impedit officiis sapiente veritatis, doloremque assumenda
-                exercitationem dignissimos maxime! Alias asperiores sequi quidem
-                adipisci vero maiores error ipsa dolores, porro perspiciatis
-                eveniet facilis nam quis facere commodi eum ut obcaecati aut
-                ratione quo. Vero reprehenderit enim explicabo omnis quae vel
-                magnam! Nulla repudiandae amet eligendi veritatis consectetur
-                beatae, animi natus quam dignissimos quis pariatur fugit tempore
-                cumque nostrum quas corporis placeat impedit nemo? Corporis ut
-                ipsum, obcaecati quibusdam nesciunt saepe omnis atque quia
-                facere excepturi cumque non provident nostrum velit culpa alias,
-                dolorem sapiente aut nulla magni commodi iure aperiam.
-                Voluptatem, nam recusandae beatae mollitia aperiam natus
-                consectetur, iusto earum ullam odio perspiciatis voluptas eaque
-                quas facilis saepe dicta ipsum quia porro officia dolore
-                reiciendis vero! Corporis hic quis aliquid illum perspiciatis
-                sint ea nemo accusantium perferendis.
-              </div>
-            </div>
-          </DialogContent>
+            <Carousel className=" w-full max-w-[1000px] mx-auto">
+              <CarouselContent className="">
+                {carouselImages.map((ci) => {
+                  return (
+                    <CarouselItem className="">
+                      <div className="p-4 bg-white  rounded-xl">
+                        <Image
+                          src={ci}
+                          alt="slide image"
+                          width={1920}
+                          height={1080}
+                          className=""
+                        />
+                      </div>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+            <motion.section
+              variants={revealIconParentVarient}
+              initial="hidden"
+              whileInView="visible"
+              className="flex gap-4 border px-2 justify-center items-center"
+            >
+              {skillsUsed.map((sk) => {
+                return (
+                  <motion.img
+                    variants={revealIconChildVarient}
+                    className="size-[50px]"
+                    src={getSkillIconUrl(sk)}
+                    alt="skill icon"
+                  />
+                );
+              })}
+            </motion.section>
+            <p className="bg-slate-500">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              provident ipsa magni sit neque, omnis maxime adipisci fuga
+              repellendus nihil quibusdam illum esse fugiat porro sunt eos illo
+              blanditiis mollitia!
+            </p>
+          </CustomDialogContent>
         </Dialog>
       </>
     </>

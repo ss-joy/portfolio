@@ -7,7 +7,7 @@ import NavBar from "@/components/NavBar";
 import { SideNavBar } from "@/components/navigations/SideNavBar";
 import Projects from "@/components/projects/Projects";
 import ScrollToTop from "@/components/ScrollToTop";
-import Skills from "@/components/Skills";
+import Skills from "@/components/skills/Skills";
 
 export default function Home() {
   return (

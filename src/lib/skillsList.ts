@@ -1,7 +1,4 @@
-import type { Skill } from "@/types";
-import Image from "next/image";
-import React from "react";
-import { motion } from "motion/react";
+import { Skill } from "@/types";
 
 export const skills: Skill[] = [
   {
@@ -78,68 +75,3 @@ export const skills: Skill[] = [
     iconUrl: "https://cdn.simpleicons.org/supabase/3ECF8E",
   },
 ];
-
-const parentVariants = {
-  init: {},
-  appear: {
-    transition: {
-      staggerChildren: 0.02,
-    },
-  },
-};
-
-const childVariants = {
-  init: {
-    opacity: 0,
-    x: -50,
-    scale: 0.3,
-  },
-  appear: {
-    opacity: 1,
-    x: 0,
-    scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 180,
-    },
-  },
-};
-
-const Pills = () => {
-  return (
-    <motion.section
-      variants={parentVariants}
-      initial="init"
-      whileInView="appear"
-      viewport={{
-        once: true,
-      }}
-      className="flex gap-2 md:gap-5 flex-wrap justify-center w-full mx-auto"
-    >
-      {skills.map((skill, index) => (
-        <motion.li
-          variants={childVariants}
-          key={index}
-          whileHover={{
-            border: "2px solid #0284c7 ",
-          }}
-          viewport={{
-            once: true,
-          }}
-          className="border-[2px] border-transparent relative z-10 flex gap-1 bg-white items-center text-[#78909c] rounded-lg p-2 hover:cursor-pointer shadow-sm shadow-slate-300"
-        >
-          <span className="text-2xl">{skill.name}</span>
-          <Image
-            src={skill.iconUrl}
-            alt="Skill icon"
-            width={50}
-            height={50}
-            className="size-[22px]"
-          />{" "}
-        </motion.li>
-      ))}
-    </motion.section>
-  );
-};
-
-export default Pills;

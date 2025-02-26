@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/carousel";
 import React from "react";
 import { SkillName } from "@/types";
-import { skills } from "../Pills";
+import { skills } from "@/lib/skillsList";
 
 type SingleProjectBoxProps = {
   project: Project;

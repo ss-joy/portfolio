@@ -52,7 +52,7 @@ const Contact = () => {
           <Satellite className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
         </SectionHeader>
 
-        <div className="grid grid-cols-2 gap-y-4 gap-x-16 items-center place-items-center h-1/2 w-1/2 mx-auto relative z-20">
+        <div className="grid grid-cols-2 gap-y-4 gap-x-16 items-center place-items-center h-1/2 w-1/2 mx-auto relative z-[2]">
           {contactInfos.map((cinfo) => {
             return (
               <motion.div

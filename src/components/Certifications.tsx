@@ -16,14 +16,14 @@ const Certifications = () => {
         <SectionHeader headingText="Certifications" className="text-white">
           <PaperclipIcon className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
         </SectionHeader>
-        <div className="relative z-20 grid grid-cols-auto-300 gap-x-6 gap-y-6">
-          <Image
+        <div className="relative z-[2] grid grid-cols-auto-300 gap-x-6 gap-y-6">
+          {/* <Image
             src={BookMarkIcon}
             alt="book mark icon"
             width={300}
             height={300}
             className="-rotate-45 absolute z-[-1] w-[300px] top-60 left-0 animate-tilt-small"
-          />
+          /> */}
           <CertificateCard
             image={hackerRankReactBasics}
             link="https://www.hackerrank.com/certificates/iframe/563541e3a03a"

@@ -158,17 +158,17 @@ const Skills = () => {
         <SkillType
           skills={frontendSkills}
           icon={<LaptopIcon className="size-[36px] stroke-sky-600" />}
-          skillName="Frontend"
+          skillSectionName="Frontend"
         />
         <SkillType
           skills={backendSkills}
           icon={<LaptopIcon className="size-[36px] stroke-sky-600" />}
-          skillName="Backend"
+          skillSectionName="Backend"
         />
         <SkillType
           skills={otherSkills}
           icon={<LaptopIcon className="size-[36px] stroke-sky-600" />}
-          skillName="Other Tools"
+          skillSectionName="Other Tools"
         />
 
         <span className="text-white block w-fit text-5xl opacity-70 hover:opacity-85 animate-spin-slow absolute bottom-52 left-20">

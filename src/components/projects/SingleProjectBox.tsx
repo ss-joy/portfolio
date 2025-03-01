@@ -26,6 +26,7 @@ import {
 import React from "react";
 import { SkillName } from "@/types";
 import { skills } from "@/lib/skillsList";
+import { v4 } from "uuid";
 
 type SingleProjectBoxProps = {
   project: Project;
@@ -135,7 +136,7 @@ const SingleProjectBox = ({
               <CarouselContent className="">
                 {carouselImages.map((ci) => {
                   return (
-                    <CarouselItem className="">
+                    <CarouselItem className="" key={v4()}>
                       <div className="p-4 bg-white  rounded-xl">
                         <Image
                           src={ci}
@@ -161,6 +162,7 @@ const SingleProjectBox = ({
               {skillsUsed.map((sk) => {
                 return (
                   <motion.img
+                    key={v4()}
                     variants={revealIconChildVarient}
                     className="size-[50px]"
                     src={getSkillIconUrl(sk)}

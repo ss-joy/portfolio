@@ -32,9 +32,12 @@ const childVariants: Variants = {
 
 type PillsProps = {
   skills: Skill[];
+  skillSectionName: string;
 };
-const Pills = ({ skills }: PillsProps) => {
-  const [selectedSkill, setSelectedSkill] = useState<SkillName | "">("");
+const Pills = ({ skills, skillSectionName }: PillsProps) => {
+  const [selectedSkill, setSelectedSkill] = useState<SkillName | "">(
+    skills[0].name
+  );
 
   const skillNames: SkillName[] = skills.map((sk) => sk.name);
 

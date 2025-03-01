@@ -1,15 +1,15 @@
 import React from "react";
 import GradientText from "../common/GradientText";
 import { PointerIcon } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { v4 } from "uuid";
 
-const revealParentVariants = {
+const revealParentVariants: Variants = {
   blurred: {},
   stable: {},
 };
 
-const revealChildVariants = {
+const revealChildVariants: Variants = {
   blurred: {
     scale: 5,
     opacity: 0,
@@ -24,7 +24,7 @@ const revealChildVariants = {
   },
 };
 
-const typeWriterParentVariants = {
+const typeWriterParentVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -33,7 +33,7 @@ const typeWriterParentVariants = {
   },
 };
 
-const typeWriterChildVariants = {
+const typeWriterChildVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 20,
@@ -50,7 +50,7 @@ const typeWriterChildVariants = {
   },
 };
 
-const bounceInParentVarients = {
+const bounceInParentVarients: Variants = {
   bottom: {},
   atPlace: {
     transition: {
@@ -59,7 +59,7 @@ const bounceInParentVarients = {
   },
 };
 
-const bounceInChildVarients = {
+const bounceInChildVarients: Variants = {
   bottom: {
     y: 100,
     opacity: 0,
@@ -117,7 +117,26 @@ const ProjectIntro = () => {
           whileInView="visible"
           className="text-8xl md:text-9xl text-sky-900"
         >
-          {"Full Stack".split("").map((l) => (
+          {"Full".split("").map((l) => (
+            <motion.span
+              variants={typeWriterChildVariants}
+              className="inline-block"
+              key={v4()}
+            >
+              {l === " " ? "\u00A0" : l}
+            </motion.span>
+          ))}
+        </motion.div>
+        <motion.div
+          variants={typeWriterParentVariants}
+          viewport={{
+            once: true,
+          }}
+          initial="hidden"
+          whileInView="visible"
+          className="text-8xl md:text-9xl text-sky-900"
+        >
+          {"Stack".split("").map((l) => (
             <motion.span
               variants={typeWriterChildVariants}
               className="inline-block"

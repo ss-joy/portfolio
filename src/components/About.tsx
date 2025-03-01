@@ -93,7 +93,7 @@ const Intro = () => {
           </motion.div>
         </div>
         {/* for smaller devies */}
-        <div className="overflow-hidden h-12 my-4 border md:hidden">
+        <div className="overflow-hidden h-12 my-4 md:hidden">
           <motion.div
             variants={parentVarientMobile}
             initial="initial"

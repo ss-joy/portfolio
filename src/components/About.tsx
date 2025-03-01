@@ -62,7 +62,7 @@ const Intro = () => {
           <motion.div
             variants={parentVarient}
             initial="initial"
-            animate="visible"
+            whileInView="visible"
             className="text-sky-800 md:text-6xl relative"
           >
             {" Sakil Sazzad Joy ".split("").map((t) => (
@@ -78,7 +78,7 @@ const Intro = () => {
           <motion.div
             variants={parentVarient}
             initial="initial"
-            animate="visible"
+            whileInView="visible"
             className="text-sky-800 text-6xl relative"
           >
             {"Sakil Sazzad Joy".split("").map((t) => (
@@ -131,6 +131,9 @@ const Intro = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 2, delay: 1.5 }}
+          viewport={{
+            once: true,
+          }}
         >
           I am a{" "}
           <span className="relative inline-block">

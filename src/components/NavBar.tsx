@@ -44,7 +44,7 @@ const NavBar = () => {
   const [hoveredLink, setHoveredLink] = useState<string>("");
 
   const { scrollY } = useScroll();
-  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
   useMotionValueEvent(scrollY, "change", (current) => {
     const diff = current - (scrollY.getPrevious() ?? 0);
     setScrollDirection(diff > 0 ? "down" : "up");

@@ -28,6 +28,18 @@ export const frontendSkills: Skill[] = [
     iconUrl: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
   },
   {
+    name: "Shadcn UI",
+    iconUrl: "https://cdn.simpleicons.org/shadcnui/000000",
+  },
+  {
+    name: "Ant Design",
+    iconUrl: "https://cdn.simpleicons.org/antdesign/06B6D4",
+  },
+  {
+    name: "Framer Motion",
+    iconUrl: "https://cdn.simpleicons.org/framer/0055f",
+  },
+  {
     name: "React.js",
     iconUrl: "https://cdn.simpleicons.org/react/61DAFB",
   },
@@ -97,6 +109,14 @@ export const backendSkills: Skill[] = [
   {
     name: "MySQL",
     iconUrl: "https://cdn.simpleicons.org/mysql/4479A1",
+  },
+  {
+    name: "Prisma ORM",
+    iconUrl: "https://cdn.simpleicons.org/prisma/2D3748",
+  },
+  {
+    name: "Drizzle ORM",
+    iconUrl: "https://cdn.simpleicons.org/drizzle/C5F74F",
   },
   {
     name: "Php",

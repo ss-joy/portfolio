@@ -40,7 +40,12 @@ export type SkillName =
   | "Supabase"
   | "Formik"
   | "Yup"
-  | "Zod";
+  | "Zod"
+  | "Shadcn UI"
+  | "Framer Motion"
+  | "Ant Design"
+  | "Prisma ORM"
+  | "Drizzle ORM";
 
 export type Skill = {
   name: SkillName;

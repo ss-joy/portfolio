@@ -5,29 +5,50 @@ import { ExternalLinkIcon, Projector } from "lucide-react";
 import React, { useState } from "react";
 import { Element } from "react-scroll";
 import ProjectIntro from "./ProjectIntro";
-import riseStaffing from "@/../public/images/uplift/cropped/staffing_3.png";
-import boxyClient from "@/../public/images/boxy/cropped/boxy_client_3.png";
-import boxyFighter from "@/../public/images/boxy/cropped/boxy_fighter_3.png";
-import dispense from "@/../public/images/dispense-go/cropped/dispense_3.png";
-import airlyFormBuilder from "@/../public/images/airly-admin/cropped/admin_form_3.png";
-import airlyCareer from "@/../public/images/airly/cropped/airly_career_3.png";
-import ast from "@/../public/images/ast/cropped/ast_3.png";
-import we from "@/../public/images/webuy/cropped/we_3.png";
 import SingleProjectBox from "./SingleProjectBox";
 import { v4 } from "uuid";
 
+import riseStaffing from "@/../public/images/uplift/cropped/staffing_3.png";
 import uplift1 from "@/../public/images/uplift/caro/1.png";
 import uplift2 from "@/../public/images/uplift/caro/2.png";
 import uplift3 from "@/../public/images/uplift/caro/3.png";
 import uplift4 from "@/../public/images/uplift/caro/4.png";
 
+import boxyClient from "@/../public/images/boxy/cropped/boxy_client_3.png";
 import boxyC1 from "@/../public/images/boxy/caro/boxyc1.png";
 import boxyC2 from "@/../public/images/boxy/caro/boxyc2.png";
 import boxyC3 from "@/../public/images/boxy/caro/boxyc3.png";
 
+import boxyFighter from "@/../public/images/boxy/cropped/boxy_fighter_3.png";
 import boxyF1 from "@/../public/images/boxy/caro/boxyf1.png";
 import boxyF2 from "@/../public/images/boxy/caro/boxyf2.png";
 import boxyF3 from "@/../public/images/boxy/caro/boxyf3.png";
+
+import dispense from "@/../public/images/dispense-go/cropped/dispense_3.png";
+import dispesne1 from "@/../public/images/dispense-go/caro/1.png";
+import dispesne2 from "@/../public/images/dispense-go/caro/2.png";
+
+import airlyFormBuilder from "@/../public/images/airly-forms/cropped/admin_form_3.png";
+import airlyFormBuilder1 from "@/../public/images/airly-forms/caro/1.png";
+import airlyFormBuilder2 from "@/../public/images/airly-forms/caro/2.png";
+import airlyFormBuilder3 from "@/../public/images/airly-forms/caro/3.png";
+import airlyFormBuilder4 from "@/../public/images/airly-forms/caro/4.png";
+
+import airlyAdmin from "@/../public/images/airly/cropped/airly_career_3.png";
+import airlyAdmin1 from "@/../public/images/airly/caro/1.png";
+import airlyAdmin2 from "@/../public/images/airly/caro/2.png";
+import airlyAdmin3 from "@/../public/images/airly/caro/3.png";
+import airlyAdmin4 from "@/../public/images/airly/caro/4.png";
+
+import ast from "@/../public/images/ast/cropped/ast_3.png";
+import ast1 from "@/../public/images/ast/caro/1.png";
+import ast2 from "@/../public/images/ast/caro/2.png";
+
+import we from "@/../public/images/webuy/cropped/we_3.png";
+import we1 from "@/../public/images/webuy/caro/1.png";
+import we2 from "@/../public/images/webuy/caro/2.png";
+import we3 from "@/../public/images/webuy/caro/3.png";
+import we4 from "@/../public/images/webuy/caro/4.png";
 
 export type Project = {
   projectName: string;
@@ -68,18 +89,65 @@ const projects: Project[] = [
     isLive: false,
     projectName: "Dispense Go",
     colorScheme: "text-green-800",
-    skillsUsed: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
+    skillsUsed: [
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Redux",
+      "Express.js",
+      "Tailwind CSS",
+    ],
     projectPrimayImage: dispense,
-    carouselImages: [],
+    carouselImages: [dispesne1, dispesne2],
+  },
+  {
+    isLive: false,
+    projectName: "Airly Forms",
+    colorScheme: "text-sky-800",
+    projectPrimayImage: airlyFormBuilder,
+    liveLink: "",
+    skillsUsed: [
+      "React.js",
+      "Next.js",
+      "Redux",
+      "Express.js",
+      "Tailwind CSS",
+      "CSS",
+      "MySQL",
+    ],
+    carouselImages: [
+      airlyFormBuilder1,
+      airlyFormBuilder2,
+      airlyFormBuilder3,
+      airlyFormBuilder4,
+    ],
+  },
+  {
+    isLive: false,
+    colorScheme: "text-sky-800",
+    projectName: "Airly Admin Dashboard Statistics and Carrers",
+    liveLink: "",
+    projectPrimayImage: airlyAdmin,
+    skillsUsed: [
+      "React.js",
+      "Next.js",
+      "Redux",
+      "Express.js",
+      "CSS",
+      "Ant Design",
+      "Mongoose.js",
+      "MySQL",
+    ],
+    carouselImages: [airlyAdmin1, airlyAdmin2, airlyAdmin3, airlyAdmin4],
   },
   {
     isLive: true,
     projectName: "AST (Audio Support Tracker)",
     colorScheme: "text-sky-800",
     liveLink: "https://ast-nine.vercel.app/",
-    skillsUsed: ["Next.js", "Tailwind CSS"],
+    skillsUsed: ["Next.js", "Tailwind CSS", "Supabase", "Shadcn UI"],
     projectPrimayImage: ast,
-    carouselImages: [],
+    carouselImages: [ast1, ast2],
   },
   {
     isLive: true,
@@ -95,25 +163,7 @@ const projects: Project[] = [
       "React Hook Form",
     ],
     projectPrimayImage: we,
-    carouselImages: [],
-  },
-  {
-    isLive: false,
-    projectName: "Airly Forms",
-    colorScheme: "text-sky-800",
-    projectPrimayImage: airlyFormBuilder,
-    liveLink: "",
-    skillsUsed: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
-    carouselImages: [],
-  },
-  {
-    isLive: false,
-    colorScheme: "text-sky-800",
-    projectName: "Airly Carrers",
-    liveLink: "",
-    projectPrimayImage: airlyCareer,
-    skillsUsed: ["React.js", "Next.js", "Redux", "Express.js", "Tailwind CSS"],
-    carouselImages: [],
+    carouselImages: [we1, we2, we3, we4],
   },
 ];
 

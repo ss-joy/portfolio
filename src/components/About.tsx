@@ -65,7 +65,7 @@ const Intro = () => {
             whileInView="visible"
             className="text-sky-800 md:text-6xl relative"
           >
-            {" Sakil Sazzad Joy ".split("").map((t) => (
+            {"Sakil Sazzad Joy ".split("").map((t) => (
               <motion.span
                 key={v4()}
                 variants={spanVariantForFirstText}
@@ -100,7 +100,7 @@ const Intro = () => {
             whileInView="visible"
             className="text-sky-800 !text-4xl relative"
           >
-            {" Sakil Sazzad Joy ".split("").map((t) => (
+            {"Sakil Sazzad Joy ".split("").map((t) => (
               <motion.span
                 key={v4()}
                 variants={spanVariantForMobileFirstText}

@@ -28,6 +28,8 @@ import React from "react";
 import { SkillName } from "@/types";
 import { skills } from "@/lib/skillsList";
 import { v4 } from "uuid";
+import { ExternalLinkIcon, GithubIcon, Lock } from "lucide-react";
+import Link from "next/link";
 
 type SingleProjectBoxProps = {
   project: Project;
@@ -66,6 +68,8 @@ const SingleProjectBox = ({
     skillsUsed,
     liveLink,
     projectDescription,
+    githubRepoLink,
+    isGithubPrivate,
   },
 }: SingleProjectBoxProps) => {
   const containerRef = useRef(null);
@@ -158,6 +162,41 @@ const SingleProjectBox = ({
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
+
+            <section className="p-2  bg-white w-full max-w-[1000px] mx-auto rounded-lg">
+              <ul className="flex justify-center items-center flex-wrap gap-6">
+                {isGithubPrivate ? (
+                  <li className="flex flex-col justify-center items-center">
+                    <Lock className="size-[50px] stroke-sky-600" />
+                    <span className="text-sky-600">Private Github Repo</span>
+                  </li>
+                ) : (
+                  <li>
+                    <Link
+                      href={githubRepoLink}
+                      target="_blank"
+                      className="flex flex-col justify-center items-center"
+                    >
+                      <GithubIcon className="size-[50px] stroke-sky-600" />
+                      <span className="text-sky-600">Github Repo</span>
+                    </Link>
+                  </li>
+                )}
+                {isLive ? (
+                  <li>
+                    <Link
+                      href={liveLink as string}
+                      target="_blank"
+                      className="flex flex-col justify-center items-center"
+                    >
+                      <ExternalLinkIcon className="size-[50px] stroke-sky-600" />
+                      <span className="text-sky-600">Live Link</span>
+                    </Link>
+                  </li>
+                ) : null}
+              </ul>
+            </section>
+
             <motion.section
               variants={revealIconParentVarient}
               initial="hidden"

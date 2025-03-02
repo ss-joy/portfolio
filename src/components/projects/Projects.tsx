@@ -67,6 +67,8 @@ export type Project = {
   projectPrimayImage: StaticImport;
   carouselImages: StaticImport[];
   projectDescription: JSX.Element;
+  isGithubPrivate: boolean;
+  githubRepoLink: string;
 };
 const projects: Project[] = [
   {
@@ -74,9 +76,11 @@ const projects: Project[] = [
     projectName: "Uplift",
     liveLink: "https://upliftnw.org/",
     colorScheme: "text-green-800",
-    skillsUsed: ["Php", "Twig", "Craft CMS", "MySQL"],
+    skillsUsed: ["JavaScript", "CSS", "Php", "Twig", "Craft CMS", "MySQL"],
     projectPrimayImage: riseStaffing,
     carouselImages: [uplift1, uplift2, uplift3, uplift4],
+    githubRepoLink: "",
+    isGithubPrivate: true,
     projectDescription: (
       <>
         <ProjectDescriptionHeader>Intro</ProjectDescriptionHeader>
@@ -170,6 +174,8 @@ const projects: Project[] = [
     ],
     projectPrimayImage: boxyClient,
     carouselImages: [boxyC1, boxyC2, boxyC3],
+    githubRepoLink: "",
+    isGithubPrivate: true,
     projectDescription: (
       <>
         <ProjectDescriptionHeader>Intro</ProjectDescriptionHeader>
@@ -207,6 +213,8 @@ const projects: Project[] = [
     skillsUsed: ["React.js", "Next.js", "Tailwind CSS", "Formik", "Yup"],
     projectPrimayImage: boxyFighter,
     carouselImages: [boxyF1, boxyF2, boxyF3],
+    githubRepoLink: "",
+    isGithubPrivate: true,
     projectDescription: (
       <>
         <ProjectDescriptionHeader>Intro</ProjectDescriptionHeader>
@@ -245,6 +253,8 @@ const projects: Project[] = [
     ],
     projectPrimayImage: dispense,
     carouselImages: [dispesne1, dispesne2],
+    githubRepoLink: "",
+    isGithubPrivate: true,
     projectDescription: (
       <>
         <ProjectDescriptionHeader>Intro</ProjectDescriptionHeader>
@@ -283,11 +293,11 @@ const projects: Project[] = [
     ),
   },
   {
-    isLive: false,
+    isLive: true,
     projectName: "Airly Forms",
     colorScheme: "text-sky-800",
     projectPrimayImage: airlyFormBuilder,
-    liveLink: "",
+    liveLink: "https://admin.airlystudio.com/",
     skillsUsed: [
       "React.js",
       "Next.js",
@@ -303,6 +313,8 @@ const projects: Project[] = [
       airlyFormBuilder3,
       airlyFormBuilder4,
     ],
+    githubRepoLink: "",
+    isGithubPrivate: true,
     projectDescription: (
       <>
         <ProjectDescriptionHeader>Intro</ProjectDescriptionHeader>
@@ -405,10 +417,10 @@ const projects: Project[] = [
     ),
   },
   {
-    isLive: false,
+    isLive: true,
     colorScheme: "text-sky-800",
     projectName: "Airly Admin Dashboard Statistics and Carrers",
-    liveLink: "",
+    liveLink: "https://admin.airlystudio.com/",
     projectPrimayImage: airlyAdmin,
     skillsUsed: [
       "React.js",
@@ -421,6 +433,8 @@ const projects: Project[] = [
       "MySQL",
     ],
     carouselImages: [airlyAdmin1, airlyAdmin2, airlyAdmin3, airlyAdmin4],
+    githubRepoLink: "",
+    isGithubPrivate: true,
     projectDescription: (
       <>
         <ProjectDescriptionHeader>Intro</ProjectDescriptionHeader>
@@ -505,6 +519,8 @@ const projects: Project[] = [
     ],
     projectPrimayImage: ast,
     carouselImages: [ast1, ast2],
+    githubRepoLink: "https://github.com/ss-joy/ast",
+    isGithubPrivate: false,
     projectDescription: (
       <>
         <ProjectDescriptionHeader>Intro</ProjectDescriptionHeader>
@@ -552,6 +568,8 @@ const projects: Project[] = [
     ],
     projectPrimayImage: we,
     carouselImages: [we1, we2, we3, we4],
+    githubRepoLink: "https://github.com/ss-joy/weBuy",
+    isGithubPrivate: false,
     projectDescription: (
       <>
         <ProjectDescriptionHeader>Intro</ProjectDescriptionHeader>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { JSX, useRef, useState } from "react";
 
 import {
   motion,
@@ -63,6 +63,7 @@ const SingleProjectBox = ({
     projectPrimayImage,
     skillsUsed,
     liveLink,
+    projectDescription,
   },
 }: SingleProjectBoxProps) => {
   const containerRef = useRef(null);
@@ -157,7 +158,7 @@ const SingleProjectBox = ({
               variants={revealIconParentVarient}
               initial="hidden"
               whileInView="visible"
-              className="flex gap-4 border px-2 justify-center items-center"
+              className="flex gap-4 px-2 justify-center items-center bg-white w-full max-w-[1000px] mx-auto rounded-lg"
             >
               {skillsUsed.map((sk) => {
                 return (
@@ -171,12 +172,10 @@ const SingleProjectBox = ({
                 );
               })}
             </motion.section>
-            <p className="bg-slate-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              provident ipsa magni sit neque, omnis maxime adipisci fuga
-              repellendus nihil quibusdam illum esse fugiat porro sunt eos illo
-              blanditiis mollitia!
-            </p>
+
+            <section className="p-2 w-full max-w-[1000px] mx-auto bg-white">
+              {projectDescription}
+            </section>
           </CustomDialogContent>
         </Dialog>
       </>

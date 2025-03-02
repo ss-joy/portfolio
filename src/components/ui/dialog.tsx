@@ -82,7 +82,7 @@ const CustomDialogContent = React.forwardRef<
       >
         {children}
         <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-          <X className="h-10 w-10 stroke-sky-600" />
+          <X className="h-5 w-5 md:h-10 md:w-10 stroke-sky-600" />
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
     </CustomDialogOverlay>

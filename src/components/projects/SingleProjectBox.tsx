@@ -109,7 +109,7 @@ const SingleProjectBox = ({
             whileHover="animate"
             className="flex justify-between items-center"
           >
-            <h1 className={"text-4xl md:text-7xl my-8 " + ` ${colorScheme} `}>
+            <h1 className={"text-3xl md:text-7xl my-8 " + ` ${colorScheme} `}>
               {projectName}
             </h1>
             <AnimatedChevronRight />
@@ -128,7 +128,9 @@ const SingleProjectBox = ({
           <CustomDialogContent className="max-w-none w-[90%] backdrop-blur-12 mt-4 bg-sky-100/90">
             <DialogHeader>
               <DialogTitle
-                className={"text-4xl md:text-7xl my-8 " + ` ${colorScheme} `}
+                className={
+                  "text-3xl md:text-7xl my-4 md:my-8 " + ` ${colorScheme} `
+                }
               >
                 {projectName}
               </DialogTitle>
@@ -158,7 +160,7 @@ const SingleProjectBox = ({
               variants={revealIconParentVarient}
               initial="hidden"
               whileInView="visible"
-              className="flex gap-4 px-2 justify-center items-center bg-white w-full max-w-[1000px] mx-auto rounded-lg"
+              className="flex gap-4 p-2 flex-wrap justify-center items-center bg-white w-full max-w-[1000px] mx-auto rounded-lg"
             >
               {skillsUsed.map((sk) => {
                 return (
@@ -173,7 +175,7 @@ const SingleProjectBox = ({
               })}
             </motion.section>
 
-            <section className="p-2 w-full max-w-[1000px] mx-auto bg-white">
+            <section className="p-2 md:p-4 w-full max-w-[1000px] mx-auto bg-white rounded-lg">
               {projectDescription}
             </section>
           </CustomDialogContent>

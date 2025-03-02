@@ -10,7 +10,7 @@ const ProjectDescriptionHeader = ({
   className,
 }: ProjectDescriptionHeaderProps) => {
   return (
-    <h2 className={tw("text-slate-600 text-5xl my-2 ", className)}>
+    <h2 className={tw("text-slate-600 text-3xl md:text-5xl my-2 ", className)}>
       {children}
     </h2>
   );

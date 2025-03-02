@@ -10,11 +10,15 @@ export const skills: Skill[] = [
     iconUrl: "https://cdn.simpleicons.org/typescript/3178C6",
   },
   { name: "HTML", iconUrl: "https://cdn.simpleicons.org/html5/E34F26" },
+  { name: "CSS", iconUrl: "https://cdn.simpleicons.org/css3/1572B6" },
   {
     name: "Tailwind CSS",
     iconUrl: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
   },
-  { name: "CSS", iconUrl: "https://cdn.simpleicons.org/css3/1572B6" },
+  {
+    name: "Ant Design",
+    iconUrl: "https://cdn.simpleicons.org/antdesign/0170FE",
+  },
   { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/339933" },
   { name: "Express.js", iconUrl: "https://cdn.simpleicons.org/express/000000" },
   { name: "NestJS", iconUrl: "https://cdn.simpleicons.org/nestjs/E0234E" },

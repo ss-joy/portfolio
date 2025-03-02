@@ -9,7 +9,7 @@ type PointedListItemProps = {
 const PointedListItem = ({ children, className }: PointedListItemProps) => {
   return (
     <li className={tw("flex gap-2 items-center justify-start", className)}>
-      <Pointer className="rotate-90 shrink-0 my-2" /> {children}
+      <Pointer className="rotate-90 shrink-0 my-2 stroke-sky-700" /> {children}
     </li>
   );
 };

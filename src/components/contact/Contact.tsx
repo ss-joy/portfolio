@@ -39,7 +39,7 @@ const contactInfos: ContactInfo[] = [
   },
   {
     iconUrl: "https://cdn.simpleicons.org/gmail/ffffff",
-    idLink: "sss.joy.one@gmail.com",
+    idLink: "mailto:sss.joy.one@gmail.com",
     type: "gmail",
   },
 ];

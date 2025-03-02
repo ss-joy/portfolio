@@ -6,6 +6,7 @@ import {
   useMotionValueEvent,
   useScroll,
   useTransform,
+  Variants,
 } from "motion/react";
 import AnimatedChevronRight from "./AnimatedChevronRight";
 import {
@@ -41,7 +42,7 @@ const revealIconParentVarient = {
   },
 };
 
-const revealIconChildVarient = {
+const revealIconChildVarient: Variants = {
   hidden: {
     opacity: 0,
     y: 20,
@@ -49,8 +50,9 @@ const revealIconChildVarient = {
   visible: {
     opacity: 1,
     y: 0,
-    type: "spring",
-    stiffness: 500,
+    transition: {
+      type: "spring",
+    },
   },
 };
 
@@ -76,7 +78,7 @@ const SingleProjectBox = ({
 
   const { scrollYProgress: scrollYProgressForScaling } = useScroll({
     target: containerRef,
-    offset: ["start end", "start start"],
+    offset: ["start end", "start 30%"],
   });
 
   // useMotionValueEvent(scrollYProgressForScaling, "change", (latest) => {
@@ -86,7 +88,7 @@ const SingleProjectBox = ({
   const containerScale = useTransform(
     scrollYProgressForScaling,
     [0, 1],
-    [1, 1.03]
+    [0.8, 1]
   );
   const getSkillIconUrl = (skillName: SkillName) =>
     skills.find((skill) => skill.name === skillName)?.iconUrl;
@@ -94,7 +96,6 @@ const SingleProjectBox = ({
   return (
     <>
       <>
-        {" "}
         <motion.div
           ref={containerRef}
           style={{
@@ -102,14 +103,14 @@ const SingleProjectBox = ({
             scale: containerScale,
           }}
           onClick={() => setShowModal((p) => !p)}
-          className="p-3 bg-white/40 rounded-lg backdrop-blur-24 hover:cursor-pointer"
+          className="p-4 md:p-8 bg-white/40 rounded-lg backdrop-blur-24 hover:cursor-pointer"
         >
           <motion.div
             initial="initial"
             whileHover="animate"
             className="flex justify-between items-center"
           >
-            <h1 className={"text-3xl md:text-7xl my-8 " + ` ${colorScheme} `}>
+            <h1 className={"text-3xl md:text-6xl my-8 " + ` ${colorScheme} `}>
               {projectName}
             </h1>
             <AnimatedChevronRight />
@@ -129,13 +130,14 @@ const SingleProjectBox = ({
             <DialogHeader>
               <DialogTitle
                 className={
-                  "text-3xl md:text-7xl my-4 md:my-8 " + ` ${colorScheme} `
+                  "font-normal text-3xl md:text-6xl my-4 md:my-8 " +
+                  ` ${colorScheme} `
                 }
               >
                 {projectName}
               </DialogTitle>
             </DialogHeader>
-            <Carousel className=" w-full max-w-[1000px] mx-auto">
+            <Carousel className="w-full max-w-[1000px] mx-auto">
               <CarouselContent className="">
                 {carouselImages.map((ci) => {
                   return (

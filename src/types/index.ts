@@ -45,7 +45,8 @@ export type SkillName =
   | "Framer Motion"
   | "Ant Design"
   | "Prisma ORM"
-  | "Drizzle ORM";
+  | "Drizzle ORM"
+  | "Radix UI";
 
 export type Skill = {
   name: SkillName;

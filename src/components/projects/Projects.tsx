@@ -565,6 +565,7 @@ const projects: Project[] = [
       "React Hook Form",
       "MongoDB",
       "Mongoose.js",
+      "Shadcn UI",
     ],
     projectPrimayImage: we,
     carouselImages: [we1, we2, we3, we4],

@@ -30,6 +30,12 @@ import { skills } from "@/lib/skillsList";
 import { v4 } from "uuid";
 import { ExternalLinkIcon, GithubIcon, Lock } from "lucide-react";
 import Link from "next/link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 type SingleProjectBoxProps = {
   project: Project;
@@ -203,17 +209,27 @@ const SingleProjectBox = ({
               whileInView="visible"
               className="flex gap-4 p-2 flex-wrap justify-center items-center bg-white w-full max-w-[1000px] mx-auto rounded-lg"
             >
-              {skillsUsed.map((sk) => {
-                return (
-                  <motion.img
-                    key={v4()}
-                    variants={revealIconChildVarient}
-                    className="size-[50px]"
-                    src={getSkillIconUrl(sk)}
-                    alt="skill icon"
-                  />
-                );
-              })}
+              <TooltipProvider>
+                {skillsUsed.map((sk) => {
+                  return (
+                    <Tooltip key={v4()}>
+                      <TooltipTrigger>
+                        {" "}
+                        <motion.img
+                          key={v4()}
+                          variants={revealIconChildVarient}
+                          className="size-[50px]"
+                          src={getSkillIconUrl(sk)}
+                          alt="skill icon"
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent className="focus:ring-0 focus:border-0 focus:outline-0 outline-0 text-sky-700">
+                        <p>{sk}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  );
+                })}
+              </TooltipProvider>
             </motion.section>
 
             <section className="p-2 md:p-4 w-full max-w-[1000px] mx-auto bg-white rounded-lg">

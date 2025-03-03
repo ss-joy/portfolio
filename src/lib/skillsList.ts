@@ -19,6 +19,14 @@ export const skills: Skill[] = [
     name: "Ant Design",
     iconUrl: "https://cdn.simpleicons.org/antdesign/0170FE",
   },
+  {
+    name: "Shadcn UI",
+    iconUrl: "https://cdn.simpleicons.org/shadcnui/000000",
+  },
+  {
+    name: "Radix UI",
+    iconUrl: "https://cdn.simpleicons.org/radixui/161618",
+  },
   { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/339933" },
   { name: "Express.js", iconUrl: "https://cdn.simpleicons.org/express/000000" },
   { name: "NestJS", iconUrl: "https://cdn.simpleicons.org/nestjs/E0234E" },

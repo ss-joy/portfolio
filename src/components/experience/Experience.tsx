@@ -1,7 +1,7 @@
 import { TimerIcon } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Element } from "react-scroll";
-import airly from "@/../public/experience/airly.jpg";
+import airly from "@/../public/icons/airly.jpg";
 import ExperienceCalender from "./ExperienceCalender";
 import CardWithAnimatedBorder from "../common/CardWithAnimatedBorder";
 import SectionHeader from "../common/SectionHeader";

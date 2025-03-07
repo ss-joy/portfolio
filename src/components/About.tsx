@@ -54,10 +54,10 @@ const spanVariantForSecondText: Variants = {
 
 const Intro = () => {
   return (
-    <div className="flex flex-col-reverse items-center md:flex-row gap-4 justify-between mt-32 leading-[60px] text-center md:text-start">
+    <div className="flex flex-col-reverse items-center md:flex-row gap-4 justify-between mt-8 min-[960px]:mt-32 leading-[60px] text-center md:text-start">
       <section className="text-sky-900 text-4xl md:text-5xl">
         Hi there!👋 This is
-        {/* for large device */}
+        {/* name for large device */}
         <div className="hidden md:block overflow-hidden h-16 my-4">
           <motion.div
             variants={parentVarient}
@@ -92,7 +92,7 @@ const Intro = () => {
             ))}
           </motion.div>
         </div>
-        {/* for smaller devies */}
+        {/* name for smaller devies */}
         <div className="overflow-hidden h-12 my-4 md:hidden">
           <motion.div
             variants={parentVarientMobile}
@@ -166,10 +166,9 @@ const Intro = () => {
               />
             </motion.svg>
           </span>
-          &nbsp;{" "}
-          <span className="!text-5xl md:!text-6xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent">
-            Software Engineer
-          </span>{" "}
+          <span className="text-4xl md:text-5xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent">
+            &nbsp;Software Engineer&nbsp;
+          </span>
           specializing in building
           <br />
           Full-Stack web applications

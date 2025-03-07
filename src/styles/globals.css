@@ -83,9 +83,11 @@
   }
   .backdrop-blur-24 {
     backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
   .backdrop-blur-12 {
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }
 

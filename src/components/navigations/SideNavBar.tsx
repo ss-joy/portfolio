@@ -16,8 +16,8 @@ export function SideNavBar() {
   const [activeLink, setActiveLink] = useState<string>("");
   return (
     <Sheet>
-      <SheetTrigger asChild className="min-[960px]:hidden">
-        <ChevronsLeft className="fixed right-2 top-1/2 z-[999]" />
+      <SheetTrigger className="min-[960px]:hidden">
+        <ChevronsLeft className="fixed right-2 top-1/2 z-[10] border-2 border-sky-500 bg-white/30 rounded-full stroke-sky-600 size-[24px] backdrop-blur-24 hover:cursor-pointer hover:scale-110" />
       </SheetTrigger>
       <SheetContent className="backdrop-blur-12 bg-white/5 w-fit">
         \**\
@@ -34,8 +34,10 @@ export function SideNavBar() {
               duration={1000}
               spy={true}
               onClick={() => setActiveLink(navItem.title)}
-              className={`flex items-center justify-between font-bold relative bg-sky-600 w-full ${
-                activeLink === navItem.title ? "text-sky-600" : "text-white"
+              className={`flex items-center justify-between font-bold relative  w-full ${
+                activeLink === navItem.title
+                  ? "text-sky-600 bg-white "
+                  : "text-white bg-sky-600 "
               } gap-2 py-1 px-5 rounded-3xl hover:cursor-pointer`}
             >
               {navItem.title}

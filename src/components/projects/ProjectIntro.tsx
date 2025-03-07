@@ -54,6 +54,7 @@ const bounceInParentVarients: Variants = {
   bottom: {},
   atPlace: {
     transition: {
+      delayChildren: 1.3,
       staggerChildren: 0.3,
     },
   },

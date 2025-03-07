@@ -12,7 +12,7 @@ import SectionHeader from "./common/SectionHeader";
 const Certifications = () => {
   return (
     <Element name="Certifications">
-      <section className="w-full min-h-screen pt-12">
+      <section className="w-full min-h-fit pt-12">
         <SectionHeader headingText="Certifications" className="text-white">
           <PaperclipIcon className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
         </SectionHeader>

@@ -46,7 +46,7 @@ const contactInfos: ContactInfo[] = [
 const Contact = () => {
   return (
     <Element name="Contact">
-      <section className="w-full min-h-screen pt-12 relative">
+      <section className="w-full min-h-fit pt-12 relative">
         <SectionHeader headingText="Contact Me" className="text-white">
           <Satellite className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
         </SectionHeader>

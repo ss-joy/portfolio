@@ -10,7 +10,7 @@ import ExperienceYearAnimated from "./ExperienceYearAnimated";
 const Experience = () => {
   return (
     <Element name="Experience">
-      <section className="w-full min-h-screen pt-12">
+      <section className="w-full min-h-fit pt-12">
         <SectionHeader headingText="Experience">
           <TimerIcon className="text-sky-600 absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-sky-600 rounded-full p-2 animate-pulse" />
         </SectionHeader>

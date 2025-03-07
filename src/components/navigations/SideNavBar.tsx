@@ -17,7 +17,7 @@ export function SideNavBar() {
   return (
     <Sheet>
       <SheetTrigger className="min-[960px]:hidden">
-        <ChevronsLeft className="fixed right-2 top-1/2 z-[10] border-2 border-sky-500 bg-white/30 rounded-full stroke-sky-600 size-[24px] backdrop-blur-24 hover:cursor-pointer hover:scale-110" />
+        <ChevronsLeft className="fixed right-2 top-1/2 z-[12] border-2 border-sky-500 bg-white/30 rounded-full stroke-sky-600 size-[24px] backdrop-blur-24 hover:cursor-pointer hover:scale-110" />
       </SheetTrigger>
       <SheetContent className="backdrop-blur-12 bg-white/5 w-fit">
         \**\

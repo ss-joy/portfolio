@@ -8,7 +8,7 @@ const parentVariants: Variants = {
   init: {},
   appear: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -22,10 +22,13 @@ const childVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      stiffness: 180,
-      ease: "linear",
-      damping: 50,
+      y: {
+        type: "spring",
+      },
+      opacity: {
+        type: "tween",
+        duration: 2,
+      },
     },
   },
 };
@@ -34,6 +37,7 @@ type PillsProps = {
   skills: Skill[];
   skillSectionName: string;
 };
+
 const Pills = ({ skills, skillSectionName }: PillsProps) => {
   const [selectedSkill, setSelectedSkill] = useState<SkillName | "">(
     skills[0].name
@@ -60,7 +64,7 @@ const Pills = ({ skills, skillSectionName }: PillsProps) => {
       viewport={{
         once: true,
       }}
-      className="flex gap-2 md:gap-5 flex-wrap justify-center w-full mx-auto"
+      className="flex gap-2 md:gap-7 flex-wrap justify-center w-full mx-auto"
     >
       {skills.map((skill, index) => (
         <motion.li
@@ -69,16 +73,13 @@ const Pills = ({ skills, skillSectionName }: PillsProps) => {
           whileHover={{
             border: "2px solid #0ea5e9 ",
           }}
-          viewport={{
-            once: true,
-          }}
           whileTap={{
             scale: 0.5,
           }}
           className={`border-[2px] border-transparent relative justify-center items-center z-10 gap-1 md:gap-2 text-sky-300 rounded-lg p-2 hover:cursor-pointer shadow-sm shadow-slate-300 flex flex-col w-[80px] md:w-[120px] md:h-[120px] bg-white`}
         >
           <Image src={skill.iconUrl} alt="Skill icon" width={50} height={50} />{" "}
-          <span className="text-base md:text-xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent text-center overflow-hidden overflow-ellipsis w-full whitespace-nowrap select-none">
+          <span className="text-base md:text-2xl bg-gradient-to-r from-sky-900 via bg-sky-500 to-sky-600 bg-clip-text text-transparent text-center overflow-hidden overflow-ellipsis w-full whitespace-nowrap select-none">
             {skill.name}
           </span>
           <AnimatePresence>

@@ -13,8 +13,8 @@ const Certifications = () => {
   return (
     <Element name="Certifications">
       <section className="w-full min-h-fit pt-12">
-        <SectionHeader headingText="Certifications" className="text-white">
-          <PaperclipIcon className="text-white absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-white rounded-full p-2 animate-pulse" />
+        <SectionHeader headingText="Certifications">
+          <PaperclipIcon className="text-sky-300 absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-sky-300 rounded-full p-2 animate-pulse" />
         </SectionHeader>
         <div className="relative z-[2] grid grid-cols-auto-300 gap-x-6 gap-y-6">
           {/* <Image

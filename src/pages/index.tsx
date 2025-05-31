@@ -18,7 +18,7 @@ const roboto = Roboto({
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-white via-sky-300 to-sky-600">
+    <div className="min-h-screen bg-gradient-to-b bg-sky-100 text-slate-900 ">
       <main className={`max-w-[1080px] mx-auto px-4 ${roboto.className}`}>
         <SideNavBar />
         <NavBar />

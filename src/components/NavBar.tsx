@@ -59,7 +59,7 @@ const NavBar = () => {
         top: scrollDirection === "down" ? "-100px" : "8px",
       }}
       onMouseLeave={() => setHoveredLink(activeLink)}
-      className="bg-sky-600/80 backdrop-blur-12 fixed top-2 left-1/2 -translate-x-1/2 w-fit mx-auto justify-between items-center gap-2 mt-8 mb-4 shadow-sm shadow-sky-300 p-2 rounded-3xl z-[11] hidden min-[960px]:flex box-shadow-[12px_12px_12px_blue]"
+      className="bg-gradient-to-r from-sky-500/90 to-blue-600/90 backdrop-blur-12 fixed top-2 left-1/2 -translate-x-1/2 w-fit mx-auto justify-between items-center backdrop-blur-md shadow-lg shadow-sky-300/30  gap-2 mt-8 mb-4 p-2 rounded-3xl z-[11] hidden min-[960px]:flex box-shadow-[12px_12px_12px_blue]"
     >
       {navItems.map((navItem, index) => (
         <Link

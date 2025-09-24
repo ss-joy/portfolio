@@ -58,7 +58,6 @@ const Education = () => {
             <School className="text-sky-300 absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-sky-300 rounded-full p-2 animate-pulse" />
           </SectionHeader>
           <section className="flex flex-col justify-center items-center gap-10">
-            <ExpandingHr delay={1} />
             <EduCard
               degreeName="B.Sc. (Engg.) in Computer Science and Engineering"
               insName="Shahjalal University of Science and Technology"
@@ -70,6 +69,7 @@ const Education = () => {
               insName="Ananda Mohan College,Mymensingh"
               logo={amc}
             />
+            <ExpandingHr delay={1} />
             <EduCard
               degreeName="Secondary School Certificate (SSC)"
               insName="Mymensingh Zilla School"

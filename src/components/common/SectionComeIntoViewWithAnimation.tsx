@@ -17,6 +17,7 @@ const SectionComeIntoViewWithAnimation = ({
         y: 0,
       }}
       transition={{ duration: 1.5 }}
+      className="my-10"
     >
       {children}
     </motion.div>

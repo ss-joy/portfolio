@@ -8,7 +8,7 @@ import MyName from "./intro/MyName";
 const Intro = () => {
   return (
     <>
-      <div className="my-10 flex flex-col-reverse items-center md:flex-row gap-8 justify-between leading-normal text-center md:text-start py-12 md:pt-40">
+      <div className="flex flex-col-reverse items-center md:flex-row gap-8 justify-between leading-normal text-center md:text-start py-22 md:pt-40">
         <motion.section className="text-slate-800 dark:text-slate-100 text-4xl md:text-5xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

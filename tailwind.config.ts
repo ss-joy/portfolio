@@ -98,6 +98,16 @@ export default {
           secondary: "#FAFAFA",
           accent: "#06B6D4",
           supporting: "#10B981",
+          white: {
+            offWhite: "#F8F9FA",
+            ivory: "#FAFAF5",
+            cool: "#F5F7FA",
+            warm: "#FFFDF5",
+            ai: "#F3F0E8",
+          },
+          blue: {
+            main: "#6FC0D9",
+          },
         },
       },
       screens: {

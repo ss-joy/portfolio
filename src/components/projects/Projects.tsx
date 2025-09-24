@@ -57,6 +57,7 @@ import we4 from "@/../public/images/webuy/caro/4.png";
 import Link from "next/link";
 import ProjectDescriptionHeader from "./ProjectDescriptionHeader";
 import PointedListItem from "./PointedListItem";
+import SectionComeIntoViewWithAnimation from "../common/SectionComeIntoViewWithAnimation";
 
 export type Project = {
   projectName: string;
@@ -607,21 +608,23 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <Element name="Projects">
-      <div className="w-full min-h-fit pt-12">
-        <SectionHeader headingText="Completed Projets">
-          <Projector className="text-sky-600 absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-sky-600 rounded-full p-2 animate-pulse" />
-        </SectionHeader>
+    <SectionComeIntoViewWithAnimation>
+      <Element name="Projects">
+        <div className="w-full min-h-fit pt-12">
+          <SectionHeader headingText="Completed Projets">
+            <Projector className="text-sky-600 absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-sky-600 rounded-full p-2 animate-pulse" />
+          </SectionHeader>
 
-        <ProjectIntro />
+          <ProjectIntro />
 
-        <section className="flex flex-col gap-8 md:gap-12 mt-4">
-          {projects.map((p) => {
-            return <SingleProjectBox key={v4()} project={p} />;
-          })}
-        </section>
-      </div>
-    </Element>
+          <section className="flex flex-col gap-8 md:gap-12 mt-4">
+            {projects.map((p) => {
+              return <SingleProjectBox key={v4()} project={p} />;
+            })}
+          </section>
+        </div>
+      </Element>
+    </SectionComeIntoViewWithAnimation>
   );
 };
 

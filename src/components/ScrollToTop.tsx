@@ -7,12 +7,12 @@ const ScrollToTop = () => {
   return (
     <motion.div
       initial={{
-        backgroundImage: "linear-gradient( to right, #0ea5e9, #2563eb)",
-        color: "#ffffff",
+        backgroundImage: "linear-gradient( to right, #0ea5e9, #6FC0D9)",
+        color: "#F3F0E8",
       }}
       whileHover={{
-        backgroundImage: "linear-gradient( to right, #0ea5e9, #ffffff)",
-        color: "#2563eb",
+        backgroundImage: "linear-gradient( to right, #ffffff)",
+        color: "#0ea5e9",
       }}
       transition={{
         type: "tween",

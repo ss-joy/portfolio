@@ -1,35 +1,11 @@
 import React, { ReactNode } from "react";
 import { motion } from "motion/react";
 import tw from "@/lib/utils";
-import { v4 } from "uuid";
 
 type SectionHeaderProps = {
   headingText: string;
   children: ReactNode;
   className?: string;
-};
-
-const h2Variants = {
-  atBottom: {},
-  comeToMiddle: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-const spanVariants = {
-  atBottom: {
-    opacity: 0.1,
-    y: 10,
-  },
-  comeToMiddle: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      type: "tween",
-    },
-  },
 };
 
 const SectionHeader = ({
@@ -39,24 +15,21 @@ const SectionHeader = ({
 }: SectionHeaderProps) => {
   return (
     <motion.h2
-      variants={h2Variants}
-      initial="atBottom"
-      whileInView="comeToMiddle"
       viewport={{
         once: true,
+        margin: "-100px",
       }}
       className={tw(
-        "text-sky-600 text-4xl md:text-5xl font-bold mt-[64px] pb-6 relative",
+        "bg-gradient-to-r from-sky-700/80 to-app-blue-main bg-clip-text text-transparent text-4xl md:text-5xl font-bold mt-[64px] pb-6 relative",
         className
       )}
     >
-      {headingText.split("").map((t) => (
+      {headingText.split(" ").map((word, index, array) => (
         <motion.span
-          key={v4()}
-          variants={spanVariants}
-          className="inline-block"
+          key={`${headingText}-word-${index}`}
+          className="inline-block mr-2 last:mr-0"
         >
-          {t === " " ? "\u00A0" : t}
+          {word}
         </motion.span>
       ))}
       {children}

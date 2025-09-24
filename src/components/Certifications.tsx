@@ -8,45 +8,48 @@ import CertificateCard from "./certifications/CertificateCard";
 import BookMarkIcon from "@/../public/icons/bookmark.png";
 import Image from "next/image";
 import SectionHeader from "./common/SectionHeader";
+import SectionComeIntoViewWithAnimation from "./common/SectionComeIntoViewWithAnimation";
 
 const Certifications = () => {
   return (
-    <Element name="Certifications">
-      <section className="w-full min-h-fit pt-12">
-        <SectionHeader headingText="Certifications">
-          <PaperclipIcon className="text-sky-300 absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-sky-300 rounded-full p-2 animate-pulse" />
-        </SectionHeader>
-        <div className="relative z-[2] grid grid-cols-auto-300 gap-x-6 gap-y-6">
-          {/* <Image
+    <SectionComeIntoViewWithAnimation>
+      <Element name="Certifications">
+        <section className="w-full min-h-fit pt-12">
+          <SectionHeader headingText="Certifications">
+            <PaperclipIcon className="text-sky-300 absolute size-16 -top-16 lg:-top-20 right-2 lg:-left-16 -rotate-45 border-2 border-sky-300 rounded-full p-2 animate-pulse" />
+          </SectionHeader>
+          <div className="relative z-[2] grid grid-cols-auto-300 gap-x-6 gap-y-6">
+            {/* <Image
             src={BookMarkIcon}
             alt="book mark icon"
             width={300}
             height={300}
             className="-rotate-45 absolute z-[-1] w-[300px] top-60 left-0 animate-tilt-small"
           /> */}
-          <CertificateCard
-            image={hackerRankReactBasics}
-            link="https://www.hackerrank.com/certificates/iframe/563541e3a03a"
-            title="React (Basic)"
-            issuedFrom="HackerRank"
-          />
+            <CertificateCard
+              image={hackerRankReactBasics}
+              link="https://www.hackerrank.com/certificates/iframe/563541e3a03a"
+              title="React (Basic)"
+              issuedFrom="HackerRank"
+            />
 
-          <CertificateCard
-            image={hackerRankSqlBasics}
-            link="https://www.hackerrank.com/certificates/iframe/5c39a15f60f0"
-            title="SQL (Basic)"
-            issuedFrom="HackerRank"
-          />
+            <CertificateCard
+              image={hackerRankSqlBasics}
+              link="https://www.hackerrank.com/certificates/iframe/5c39a15f60f0"
+              title="SQL (Basic)"
+              issuedFrom="HackerRank"
+            />
 
-          <CertificateCard
-            image={udeymyGitBasics}
-            link="https://www.udemy.com/certificate/UC-eab97efd-7a6b-469d-be7a-72c3cc8962e4/"
-            title="Git and Github"
-            issuedFrom="Udemy"
-          />
-        </div>
-      </section>
-    </Element>
+            <CertificateCard
+              image={udeymyGitBasics}
+              link="https://www.udemy.com/certificate/UC-eab97efd-7a6b-469d-be7a-72c3cc8962e4/"
+              title="Git and Github"
+              issuedFrom="Udemy"
+            />
+          </div>
+        </section>
+      </Element>
+    </SectionComeIntoViewWithAnimation>
   );
 };
 

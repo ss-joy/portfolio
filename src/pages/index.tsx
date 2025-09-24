@@ -1,4 +1,4 @@
-import Intro from "@/components/About";
+import Intro from "@/components/Intro";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/contact/Contact";
 import Education from "@/components/Education";
@@ -18,7 +18,7 @@ const roboto = Roboto({
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b bg-sky-100 text-slate-900 ">
+    <div className="min-h-screen bg-app-white-ai text-slate-900 ">
       <main className={`max-w-[1080px] mx-auto px-4 ${roboto.className}`}>
         <SideNavBar />
         <NavBar />

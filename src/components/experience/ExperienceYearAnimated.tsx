@@ -7,7 +7,7 @@ const ExperienceYearAnimated = () => {
   useEffect(() => {
     const t = setInterval(() => {
       setYear((p) => {
-        if (p < 2) {
+        if (p < 3) {
           return p + 0.5;
         }
         return p;

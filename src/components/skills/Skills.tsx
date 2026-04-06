@@ -22,7 +22,7 @@ export const frontendSkills: Skill[] = [
   },
   {
     name: "CSS",
-    iconUrl: "https://cdn.simpleicons.org/css3/1572B6",
+    iconUrl: "https://cdn.simpleicons.org/css/1572B6",
   },
   {
     name: "Tailwind CSS",
